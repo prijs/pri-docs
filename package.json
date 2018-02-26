@@ -1,0 +1,29 @@
+{
+  "name": "pri-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pri",
+    "build": "pri build",
+    "preview": "pri preview",
+    "deploy": "pri build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ascoders/pri-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ascoders/pri-docs/issues"
+  },
+  "homepage": "https://github.com/ascoders/pri-docs#readme",
+  "dependencies": {
+    "pri": "0.0.46"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}
