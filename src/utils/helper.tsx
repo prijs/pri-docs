@@ -5,13 +5,7 @@
 
 import { combineStores } from "dob"
 import { ApplicationAction, ApplicationStore } from "../stores/application"
-import { UserAction, UserStore } from "../stores/user"
 
-const stores = combineStores({
-  ApplicationAction,
-  ApplicationStore,
-  UserAction,
-  UserStore
-})
+const stores = combineStores({ ApplicationAction, ApplicationStore })
 
 export { stores }
