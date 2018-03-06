@@ -1,3 +1,5 @@
+# Config
+
 > You can also create config files by project dashboard easily!
 
 You can create these files to config `pri`:

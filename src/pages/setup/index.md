@@ -1,4 +1,4 @@
-## Setup
+# Setup
 
 First, create an empty folder:
 

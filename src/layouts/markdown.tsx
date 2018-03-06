@@ -19,47 +19,62 @@ export default class Page extends React.PureComponent<Props & RouteComponentProp
 
   public render() {
     return (
-      <Layout style={{ minHeight: "100vh" }}>
-        <Sider>
-          <Menu theme="dark" selectedKeys={[this.props.location.pathname]} mode="inline">
-            <Menu.Item key="/">
-              <Link to="/">
-                <span>Overview</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="/setup">
-              <Link to="/setup">
-                <span>Setup</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="/config">
-              <Link to="/config">
-                <span>Config</span>
-              </Link>
-            </Menu.Item>
+      <Layout>
+        <Header>
+          <Menu
+            mode="horizontal"
+            defaultSelectedKeys={["2"]}
+          >
+            <S.Logo>Pri</S.Logo>
           </Menu>
-        </Sider>
-        <Layout>
-          <Content>
-            <S.Content>
-              {this.props.children}
+        </Header>
 
-              <Divider style={{ marginTop: 50 }}>
-                <Link
-                  to={`https://github.com/ascoders/pri-docs/blob/master/src/pages${this.props.location.pathname === "/" ? "" : this.props.location.pathname}/index.md`}
-                  target="_blank"
-                >
-                  <Button type="dashed" icon="edit">
-                    Edit this page on github.
+        <Content style={{ padding: "0 50px 0 50px" }}>
+          <Layout style={{ padding: "24px 0", background: "#fff" }}>
+            <Sider width={200} style={{ background: "#fff" }}>
+              <Menu
+                mode="inline"
+                selectedKeys={[this.props.location.pathname]}
+                style={{ height: "100%" }}
+              >
+                <Menu.Item key="/">
+                  <Link to="/">
+                    <span>Overview</span>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="/setup">
+                  <Link to="/setup">
+                    <span>Setup</span>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="/config">
+                  <Link to="/config">
+                    <span>Config</span>
+                  </Link>
+                </Menu.Item>
+              </Menu>
+            </Sider>
+            <Content style={{ padding: "0 24px", minHeight: 280 }}>
+              <S.Content>
+                {this.props.children}
+
+                <Divider style={{ marginTop: 50 }}>
+                  <a
+                    href={`https://github.com/ascoders/pri-docs/blob/master/src/pages${this.props.location.pathname === "/" ? "" : this.props.location.pathname}/index.md`}
+                    target="_blank"
+                  >
+                    <Button type="dashed" icon="edit">
+                      Edit this page on github.
                   </Button>
-                </Link>
-              </Divider>
-            </S.Content>
-          </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Pri ©2018 Created by Pri
-          </Footer>
-        </Layout>
+                  </a>
+                </Divider>
+              </S.Content>
+            </Content>
+          </Layout>
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          Pri ©2018 Created by Pri
+    </Footer>
       </Layout>
     )
   }

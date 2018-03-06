@@ -1,14 +1,14 @@
 import styled, { injectGlobal } from "styled-components"
 
 export const Content = styled.div`
-  position: relative;
-  background: #fff;
-  padding: 2rem 5%;
-  box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0,32,128,.1), 0 0 0 1px #f0f2f7;
-  border-radius: .25rem;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  margin: 20px;
+
+`
+
+export const Logo = styled.div`
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 15px;
 `
 
 // tslint:disable-next-line:no-unused-expression
@@ -53,20 +53,17 @@ injectGlobal`
     border-left: 0.25em solid #dfe2e5;
   }
 
-  .ant-layout-sider {
-    box-shadow: 0.4rem 0.4rem 0.8rem rgba(0,32,64,.1);
-    background: linear-gradient(-30deg,#2a3d67,#14264e);
+  .ant-layout {
+    background-color: white !important;
   }
 
-  .ant-menu-dark {
-    background: none;
+  .ant-layout-header {
+    background-color: white !important;
+    height: 48px !important;
+    line-height: 48px !important;
   }
 
-  .ant-menu-item:first-child {
-    margin-top: 0;
-  }
-
-  .ant-menu-dark.ant-menu-inline .ant-menu-item:hover, .ant-menu.ant-menu-dark .ant-menu-item-selected {
-    background: hsla(0,0%,100%,.1);
+  .ant-layout-content {
+    min-height: calc(100vh - 48px - 69px);
   }
 `
