@@ -42,7 +42,6 @@ injectGlobal`
     word-break: normal;
     word-wrap: normal;
     line-height: 2;
-    font-size: 1rem;
     hyphens: none;
     tab-size: 4;
   }
@@ -51,6 +50,11 @@ injectGlobal`
     padding: 0 1em;
     color: #6a737d;
     border-left: 0.25em solid #dfe2e5;
+  }
+
+  li+li {
+    margin-top: 0.25rem;
+    line-height: 1.5rem;
   }
 
   .ant-layout {
