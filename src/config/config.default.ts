@@ -1,4 +1,4 @@
-import { ProjectConfig } from "pri"
+import { ProjectConfig } from "pri/client"
 
 export default {
   title: "Pri",

@@ -6,6 +6,7 @@ import * as S from "./markdown.style"
 import "antd/dist/antd.css"
 
 const SubMenu = Menu.SubMenu
+const MenuItemGroup = Menu.ItemGroup
 const { Header, Content, Footer, Sider } = Layout
 
 class Props { }
@@ -38,20 +39,17 @@ export default class Page extends React.PureComponent<Props & RouteComponentProp
                 style={{ height: "100%" }}
               >
                 <Menu.Item key="/">
-                  <Link to="/">
-                    <span>Overview</span>
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="/setup">
-                  <Link to="/setup">
-                    <span>Setup</span>
-                  </Link>
+                  <Link to="/">Setup</Link>
                 </Menu.Item>
                 <Menu.Item key="/config">
-                  <Link to="/config">
-                    <span>Config</span>
-                  </Link>
+                  <Link to="/config">Config</Link>
                 </Menu.Item>
+
+                <MenuItemGroup key="/development" title="Development">
+                  <Menu.Item key="/development/getting-started">
+                    <Link to="/development/getting-started">  Getting Started</Link>
+                  </Menu.Item>
+                </MenuItemGroup>
               </Menu>
             </Sider>
             <Content style={{ padding: "0 24px", minHeight: 280 }}>

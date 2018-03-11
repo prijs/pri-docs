@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/ascoders/pri-docs#readme",
   "dependencies": {
-    "pri": "^0.2.21"
+    "pri": "^0.3.1",
+    "pri-plugin-test": "file:../pri-plugin-test"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0"

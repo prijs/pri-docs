@@ -1,3 +1,3 @@
-import { ProjectConfig } from "pri"
+import { ProjectConfig } from "pri/client"
 
 export default {} as ProjectConfig
