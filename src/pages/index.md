@@ -1,4 +1,4 @@
-# Pri &middot;  [![npm version](https://img.shields.io/npm/v/pri.svg?style=flat-square)](https://www.npmjs.com/package/pri)
+# Pri &middot; [![npm version](https://img.shields.io/npm/v/pri.svg?style=flat-square)](https://www.npmjs.com/package/pri)
 
 Pri is a toolkit for building web applications with React. **Helps you deal with everything, and you can focus on business logic.**
 
@@ -18,20 +18,19 @@ Then, init the pri project:
 npx pri init
 ```
 
-> No `npx`? Run `./node_modules/.bin/pri init`.
+No `npx`? Run `./node_modules/.bin/pri init`.
 
-## Using it!
+```bash
+Success init your project, you can run serval commands:
 
-`npm start`
+npm start
+  Starts the development server.
 
-Run dev server in development mode with files watching and HMR.
+npm run build
+  Bundles the app into static files for production.
 
-> You should set `chrome://flags/#allow-insecure-localhost`, to trust local certificate.
+npm run preview
+  Starts the development server.
 
-`npm run preview`
-
-Preview in production mode, won't watch files change.
-
-`npm run build`
-
-Production deployment. By default the dist folder is `./dist`.
+Happy hacking!
+```

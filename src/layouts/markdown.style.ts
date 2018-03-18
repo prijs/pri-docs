@@ -1,8 +1,6 @@
 import styled, { injectGlobal } from "styled-components"
 
-export const Content = styled.div`
-
-`
+export const Content = styled.div``
 
 export const Logo = styled.div`
   float: left;
@@ -24,7 +22,7 @@ injectGlobal`
     color: #4b00da;
     border-radius: .15rem;
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-    font-size: .9rem;
+    font-size: 14px;
     padding: .2rem .4rem;
     margin: 0 .1rem;
   }
@@ -69,5 +67,9 @@ injectGlobal`
 
   .ant-layout-content {
     min-height: calc(100vh - 48px - 69px);
+  }
+
+  .ant-menu-item-group-title {
+    font-weight: bold;
   }
 `

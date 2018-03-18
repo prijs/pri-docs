@@ -4,6 +4,7 @@
  */
 
 import { combineStores } from "dob"
+
 import { ApplicationAction, ApplicationStore } from "../stores/application"
 
 const stores = combineStores({ ApplicationAction, ApplicationStore })

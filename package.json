@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/ascoders/pri-docs#readme",
   "dependencies": {
-    "pri": "^0.3.1",
-    "pri-plugin-test": "file:../pri-plugin-test"
+    "pri": "^0.3.10"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^1.1.0",
+    "pri-plugin-test": "file:../pri-plugin-test"
   }
 }
