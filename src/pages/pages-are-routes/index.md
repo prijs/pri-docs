@@ -1,6 +1,6 @@
 # Pages are routes
 
-> You can also create pages by [project dashboard](../features/project-dashboard) easily!
+> You can also create pages by [project dashboard](features/project-dashboard) easily!
 
 ## Home page
 

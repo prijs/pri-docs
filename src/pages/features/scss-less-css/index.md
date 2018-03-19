@@ -26,4 +26,8 @@ The same as sass.
 
 ## css
 
-Native support it.
+Native support css:
+
+```typescript
+import "./index.css"
+```

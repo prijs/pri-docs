@@ -1,6 +1,6 @@
 # Layout support
 
-> You can also create layout by project dashboard easily!
+> You can also create layout by [project dashboard](features/project-dashboard) easily!
 
 Populate `./src/layouts/index.tsx` inside your project:
 
