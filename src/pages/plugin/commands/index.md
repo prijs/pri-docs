@@ -12,7 +12,7 @@ Register new command by using `registerCommand` method.
 import { pri } from "pri"
 
 export default (instance: typeof pri) => {
-  // Add new command line: pri deploy
+  // Add new commander: pri deploy
   instance.commands.registerCommand({
     name: "deploy",
     description: "desc",
@@ -31,7 +31,7 @@ Then you can use `pri deploy`.
 
 ## expandCommand
 
-Expand exist command by using `expandCommand`.
+Expand commander which already exist.
 
 **`./src/index.ts`**
 

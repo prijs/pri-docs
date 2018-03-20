@@ -17,10 +17,7 @@ export default (instance: typeof pri) => {
       myCustomPlugin: {
         hasComponents: files.some(file => {
           const relativePath = path.relative(projectRootPath, path.join(file.dir, file.name))
-          if (!relativePath.startsWith("src/components")) {
-            return true
-          }
-          return false
+          return relativePath.startsWith("src/components")
         })
       }
     }
