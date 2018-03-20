@@ -113,14 +113,20 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   <Menu.Item key={`${menuKeyPrefix}/automatic-optimization/scope-hoist`}>
                     <Link to="/automatic-optimization/scope-hoist">Scope hoist</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/automatic-optimization/auto-dll`}>
-                    <Link to="/automatic-optimization/auto-dll">Auto dll</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/automatic-optimization/auto-dlls`}>
+                    <Link to="/automatic-optimization/auto-dlls">Auto dlls</Link>
                   </Menu.Item>
                 </MenuItemGroup>
 
-                <MenuItemGroup key={`${menuKeyPrefix}/development`} title="Development">
-                  <Menu.Item key={`${menuKeyPrefix}/development/write-plugin`}>
-                    <Link to="/development/write-plugin">Write plugin</Link>
+                <MenuItemGroup key={`${menuKeyPrefix}/plugin`} title="Plugin">
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/write-plugin`}>
+                    <Link to="/plugin/write-plugin">Write plugin</Link>
+                  </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/commands`}>
+                    <Link to="/plugin/commands">Commands</Link>
+                  </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/project`}>
+                    <Link to="/plugin/project">Project</Link>
                   </Menu.Item>
                 </MenuItemGroup>
               </Menu>
