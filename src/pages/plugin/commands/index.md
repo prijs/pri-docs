@@ -23,17 +23,11 @@ export default (instance: typeof pri) => {
 
 Then you can use `pri deploy`.
 
-#### name
-
-Command name, `pri <name>`.
-
-#### description
-
-Description for command, when excute `pri -h`.
-
-#### action
-
-Action for command, when excute `pri <name>.`
+| Option      | Description                                    |
+| ----------- | ---------------------------------------------- |
+| name        | Command name, `pri <name>`.                    |
+| description | Description for command, when excute `pri -h`. |
+| action      | Action for command, when excute `pri <name>.`  |
 
 ## expandCommand
 
@@ -54,14 +48,8 @@ export default (instance: typeof pri) => {
 }
 ```
 
-#### name
-
-Exist command name, `pri <name>`.
-
-#### beforeAction
-
-Action before `pri <name>`.
-
-#### afterAction
-
-Action after `pri <name>`.
+| Option       | Description                       |
+| ------------ | --------------------------------- |
+| name         | Exist command name, `pri <name>`. |
+| beforeAction | Action before `pri <name>`.       |
+| afterAction  | Action after `pri <name>`.        |
