@@ -116,6 +116,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   <Menu.Item key={`${menuKeyPrefix}/automatic-optimization/auto-dlls`}>
                     <Link to="/automatic-optimization/auto-dlls">Auto dlls</Link>
                   </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/automatic-optimization/auto-prefetch`}>
+                    <Link to="/automatic-optimization/auto-prefetch">Auto prefetch</Link>
+                  </Menu.Item>
                 </MenuItemGroup>
 
                 <MenuItemGroup key={`${menuKeyPrefix}/plugin`} title="Plugin">

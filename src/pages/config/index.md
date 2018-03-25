@@ -41,7 +41,7 @@ Dist main file name.
 
 ### publicPath `string` `null`
 
-Assets public path. eg: `"some.com"`, `"some.com/somePath"`, `"/somePath"`.
+Assets public path. eg: `"//some.com"`, `"//some.com/somePath"`, `"/somePath"`.
 
 * If not set, result: `/<distPath>`.
 * If set /somePath for example, result: `/somePath/<distPath>`.

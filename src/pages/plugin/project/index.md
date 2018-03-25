@@ -84,7 +84,7 @@ export default (instance: typeof pri) => {
 
 ### Entry
 
-You can use `entry.pipeHeader`, `entry.pipeBody` to extend entry code. Usage:
+You can use methods like `entry.pipeHeader` and `entry.pipeBody` to extend entry code. Usage:
 
 ```typescript
 entry.pipeBody(str => str)
