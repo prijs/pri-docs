@@ -15,14 +15,14 @@ npm install pri
 Then, init the pri plugin:
 
 ```bash
-npx pri plugin-init <pluginName>
+npx pri plugin-init
 ```
 
-No `npx`? Run `./node_modules/.bin/pri plugin-init <pluginName>`
+No `npx`? Run `./node_modules/.bin/pri plugin-init`
 
 ## Plug-in loading mode
 
-All the pri-plugin should be named like `pri-plugin-*`, for example:
+All the pri-plugin should be named like `pri-plugin-*` or `@ali/pri-plugin-*`, for example:
 
 * `pri-plugin-test`
 * `pri-plugin-command-deploy`
