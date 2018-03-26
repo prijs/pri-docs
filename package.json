@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/ascoders/pri-docs#readme",
   "dependencies": {
-    "jquery": "^3.3.1",
     "pri": "^0.4.5"
   },
   "devDependencies": {
