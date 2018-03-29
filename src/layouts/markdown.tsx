@@ -131,6 +131,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   <Menu.Item key={`${menuKeyPrefix}/plugin/project`}>
                     <Link to="/plugin/project">Project</Link>
                   </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/plugin-test`}>
+                    <Link to="/plugin/plugin-test">Plugin test</Link>
+                  </Menu.Item>
                 </MenuItemGroup>
               </Menu>
             </Sider>

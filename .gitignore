@@ -3,3 +3,6 @@ dist
 .cache
 .vscode
 .temp
+.nyc_output
+built
+coverage
