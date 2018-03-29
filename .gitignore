@@ -1,8 +1,9 @@
 node_modules
-dist
 .cache
 .vscode
 .temp
-.nyc_output
 built
+.DS_Store
 coverage
+.nyc_output
+dist

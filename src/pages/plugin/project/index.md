@@ -163,3 +163,20 @@ entry.pipe.set("my-custom-position", text => {
 | ------ | -------------------------------------- | --------------------- |
 | get    | `name: string`, `defaultValue: string` | Get custom pipe code. |
 | set    | `pipe: (str: string) => string`        | Set custom pipe code. |
+
+## whiteFileRules
+
+Pri uses a white list for project file management. You can use `whiteFileRules.add` to add project white file list.
+
+```typescript
+export default (instance: typeof pri) => {
+  instance.project.whiteFileRules.add(file => {
+    const relativePath = path.relative(projectRootPath, file.dir)
+    return relativePath === "src/pages" && file.name === "404" && file.ext === ".tsx"
+  })
+})
+```
+
+It mean that file or dir is validate, when return `true`.
+
+> Any project files that are not on the white list will report error.
