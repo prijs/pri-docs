@@ -14,6 +14,18 @@ export default (instance: typeof pri) => {
 }
 ```
 
+## getProjectConfig
+
+Get project config by env: `local` or `prod`.
+
+```typescript
+import { pri } from "pri"
+
+export default (instance: typeof pri) => {
+  const projectConfig = instance.project.getProjectConfig("prod")
+}
+```
+
 ## onAnalyseProject
 
 Every time `pri` scan project files.
@@ -180,3 +192,30 @@ export default (instance: typeof pri) => {
 It mean that file or dir is validate, when return `true`.
 
 > Any project files that are not on the white list will report error.
+
+## lint
+
+You can run lint anywhere by execute `project.lint()`:
+
+```typescript
+import { pri } from "pri"
+
+export default (instance: typeof pri) => {
+  instance.project.lint()
+}
+```
+
+## checkProjectFiles
+
+Check project white file list.
+
+`pri dev` and `pri build` has built in `checkProjectFiles` function, you can call this function when add a new command.
+
+```typescript
+import { pri } from "pri"
+
+export default (instance: typeof pri) => {
+  const projectConfig = instance.project.getProjectConfig("prod")
+  await instance.project.checkProjectFiles(projectConfig)
+}
+```

@@ -55,4 +55,4 @@ To
 }
 ```
 
-And run `npm start` in both plugin root folder and project root folder.
+And run `npm start` in plugin root.
