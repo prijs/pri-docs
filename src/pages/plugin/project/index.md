@@ -235,20 +235,20 @@ export default (instance: typeof pri) => {
 }
 ```
 
-## onEnsureProjectFiles
+## addProjectFiles
 
-Hook when running `ensureProjectFiles`, you can add your custom files here:
+Hook when running `addProjectFiles`, you can add your custom files here:
 
 ```typescript
 import { pri } from "pri"
 
 export default (instance: typeof pri) => {
-  instance.project.onEnsureProjectFiles(() => ({
+  instance.project.addProjectFiles({
     fileRelativePath: "abc.json",
     fileContentOrResolve: JSON.stringify({
       bin: "npm start"
     })
-  }))
+  })
 }
 ```
 
