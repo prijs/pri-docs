@@ -219,3 +219,41 @@ export default (instance: typeof pri) => {
   await instance.project.checkProjectFiles(projectConfig)
 }
 ```
+
+## ensureProjectFiles
+
+Ensure important files exist, like `.gitignore`, `.npmignore` and so on. You can call it in a custom command.
+
+This method will called when excute `pri init`, `pri`, `pri build`.
+
+```typescript
+import { pri } from "pri"
+
+export default (instance: typeof pri) => {
+  const projectConfig = instance.project.getProjectConfig("prod")
+  await instance.project.ensureProjectFiles(projectConfig)
+}
+```
+
+## onEnsureProjectFiles
+
+Hook when running `ensureProjectFiles`, you can add your custom files here:
+
+```typescript
+import { pri } from "pri"
+
+export default (instance: typeof pri) => {
+  instance.project.onEnsureProjectFiles(() => ({
+    fileRelativePath: "abc.json",
+    fileContentOrResolve: JSON.stringify({
+      bin: "npm start"
+    })
+  }))
+}
+```
+
+You can also pass a function into `fileContentOrResolve` to access current file content:
+
+```typescript
+fileContentOrResolve: prevFileContent => prevFileContent + "\\n"
+```

@@ -64,7 +64,7 @@ Only take effect on `npm run build` | `pri build`
 
 Generate static index file for each route, when building.
 
-Usefal for static service who don't serve fallback html, like github-pages.
+Useful for static service who don't serve fallback html, like github-pages.
 
 ### customEnv `{ [key: string]: any }` `undefined`
 
