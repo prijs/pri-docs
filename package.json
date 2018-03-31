@@ -6,7 +6,6 @@
   "scripts": {
     "test": "pri test",
     "start": "pri",
-    "build": "pri build",
     "preview": "pri preview",
     "deploy": "pri build && gh-pages -d dist"
   },
