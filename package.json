@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "pri test",
-    "start": "pri",
-    "preview": "pri preview",
-    "deploy": "pri build && gh-pages -d dist"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ascoders/pri-docs.git"
