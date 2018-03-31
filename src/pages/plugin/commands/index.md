@@ -16,7 +16,7 @@ export default (instance: typeof pri) => {
   instance.commands.registerCommand({
     name: "deploy",
     description: "desc",
-    action: () => {}
+    action: async () => {}
   })
 }
 ```
@@ -42,8 +42,8 @@ export default (instance: typeof pri) => {
   // Run extra code between pri init
   instance.commands.expandCommand({
     name: "init",
-    beforeAction: (...args: any[]) => {}
-    afterAction: (...args: any[]) => {}
+    beforeAction: async (...args: any[]) => {}
+    afterAction: async (...args: any[]) => {}
   })
 }
 ```
