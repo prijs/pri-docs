@@ -244,16 +244,11 @@ import { pri } from "pri"
 
 export default (instance: typeof pri) => {
   instance.project.addProjectFiles({
-    fileRelativePath: "abc.json",
-    fileContentOrResolve: JSON.stringify({
-      bin: "npm start"
-    })
+    fileName: "abc.json",
+    pipeContent: prevContent =>
+      JSON.stringify({
+        bin: "npm start"
+      })
   })
 }
-```
-
-You can also pass a function into `fileContentOrResolve` to access current file content:
-
-```typescript
-fileContentOrResolve: prevFileContent => prevFileContent + "\\n"
 ```
