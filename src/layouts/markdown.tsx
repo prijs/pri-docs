@@ -128,14 +128,23 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   <Menu.Item key={`${menuKeyPrefix}/plugin/commands`}>
                     <Link to="/plugin/commands">Commands</Link>
                   </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/build`}>
+                    <Link to="/plugin/build">Build</Link>
+                  </Menu.Item>
                   <Menu.Item key={`${menuKeyPrefix}/plugin/project`}>
                     <Link to="/plugin/project">Project</Link>
                   </Menu.Item>
                   <Menu.Item key={`${menuKeyPrefix}/plugin/context`}>
                     <Link to="/plugin/context">Context</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/plugin-test`}>
-                    <Link to="/plugin/plugin-test">Plugin test</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/web-ui`}>
+                    <Link to="/plugin/web-ui">WebUI</Link>
+                  </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/service`}>
+                    <Link to="/plugin/service">Service</Link>
+                  </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/plugin/test`}>
+                    <Link to="/plugin/test">Test</Link>
                   </Menu.Item>
                 </MenuItemGroup>
               </Menu>
