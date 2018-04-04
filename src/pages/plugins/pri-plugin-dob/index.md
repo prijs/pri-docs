@@ -1,4 +1,4 @@
-# pri-plugin-dob
+# pri-plugin-dob &middot; [![npm version](https://img.shields.io/npm/v/pri-plugin-dob.svg?style=flat-square)](https://www.npmjs.com/package/pri-plugin-dob)
 
 [dob](https://github.com/dobjs/dob) is a tool for monitoring object changes, and [dob-react](https://github.com/dobjs/dob-react) can help you manage stores in react.
 
