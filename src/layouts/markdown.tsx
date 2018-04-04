@@ -24,8 +24,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
     const menuKeyPrefix = "/pri-docs"
     const selectedKeys = (menuKeyPrefix + this.props.location.pathname).replace(/\/$/g, "")
 
-    return (
-      <Layout>
+    return <Layout>
         <Header>
           <Menu mode="horizontal">
             <S.Logo>Pri</S.Logo>
@@ -76,16 +75,11 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   </Menu.Item>
                 </MenuItemGroup>
 
-                <MenuItemGroup
-                  key={`${menuKeyPrefix}/automatic-optimization`}
-                  title={
-                    <span>
+                <MenuItemGroup key={`${menuKeyPrefix}/automatic-optimization`} title={<span>
                       Automatic optimization&nbsp;<Tooltip title="You don't need extra code configuration, these optimizations are done automatically.">
                         <Icon type="question-circle-o" />
                       </Tooltip>
-                    </span>
-                  }
-                >
+                    </span>}>
                   <Menu.Item key={`${menuKeyPrefix}/automatic-optimization/typescript-support`}>
                     <Link to="/automatic-optimization/typescript-support">Typescript support</Link>
                   </Menu.Item>
@@ -121,30 +115,36 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   </Menu.Item>
                 </MenuItemGroup>
 
-                <MenuItemGroup key={`${menuKeyPrefix}/plugin`} title="Plugin">
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/write-plugin`}>
-                    <Link to="/plugin/write-plugin">Write plugin</Link>
+                <MenuItemGroup key={`${menuKeyPrefix}/plugins`} title="Plugins">
+                  <Menu.Item key={`${menuKeyPrefix}/plugins/pri-plugin-dob`}>
+                    <Link to="/plugins/pri-plugin-dob">pri-plugin-dob</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/commands`}>
-                    <Link to="/plugin/commands">Commands</Link>
+                </MenuItemGroup>
+
+                <MenuItemGroup key={`${menuKeyPrefix}/development`} title="Development">
+                  <Menu.Item key={`${menuKeyPrefix}/development/write-a-plugin`}>
+                    <Link to="/development/write-a-plugin">Write a plugin</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/build`}>
-                    <Link to="/plugin/build">Build</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/development/context`}>
+                    <Link to="/development/context">Context</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/project`}>
-                    <Link to="/plugin/project">Project</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/development/build`}>
+                    <Link to="/development/build">Build</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/context`}>
-                    <Link to="/plugin/context">Context</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/development/commands`}>
+                    <Link to="/development/commands">Commands</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/web-ui`}>
-                    <Link to="/plugin/web-ui">WebUI</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/development/project`}>
+                    <Link to="/development/project">Project</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/dev-service`}>
-                    <Link to="/plugin/dev-service">Dev Service</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/development/web-ui`}>
+                    <Link to="/development/web-ui">WebUI</Link>
                   </Menu.Item>
-                  <Menu.Item key={`${menuKeyPrefix}/plugin/test`}>
-                    <Link to="/plugin/test">Test</Link>
+                  <Menu.Item key={`${menuKeyPrefix}/development/dev-service`}>
+                    <Link to="/development/dev-service">Dev Service</Link>
+                  </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/development/test`}>
+                    <Link to="/development/test">Test</Link>
                   </Menu.Item>
                 </MenuItemGroup>
               </Menu>
@@ -155,12 +155,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                 {this.props.children}
 
                 <Divider style={{ marginTop: 50 }}>
-                  <a
-                    href={`https://github.com/ascoders/pri-docs/blob/master/src/pages${
-                      this.props.location.pathname === "/" ? "" : this.props.location.pathname
-                    }/index.md`}
-                    target="_blank"
-                  >
+                  <a href={`https://github.com/ascoders/pri-docs/blob/master/src/pages${this.props.location.pathname === "/" ? "" : this.props.location.pathname}/index.md`} target="_blank">
                     <Button type="dashed" icon="edit">
                       Edit this page on github.
                     </Button>
@@ -172,6 +167,5 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
         </Content>
         <Footer style={{ textAlign: "center" }}>Pri ©2018 Created by Pri</Footer>
       </Layout>
-    )
   }
 }

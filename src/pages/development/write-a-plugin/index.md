@@ -1,4 +1,4 @@
-# Write plugin
+# Write a plugin
 
 It's easy to expand the commander, analyse project files, and modifying the generated entry file by plugins.
 
