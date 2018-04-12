@@ -19,6 +19,13 @@
 
     <body>
       <div id="root"></div>
+
+      <script>
+        if (navigator.serviceWorker) {
+          navigator.serviceWorker.register("/pri-docs/sw.js", {scope: "/pri-docs/"})
+        }
+      </script>
+
       <script src="/pri-docs/main.js"></script>
     </body>
 
