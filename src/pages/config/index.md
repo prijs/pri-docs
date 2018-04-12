@@ -4,16 +4,16 @@
 
 You can create these files to config `pri`:
 
-* `./src/config/config.default.ts`.
-* `./src/config/config.local.ts`, enable when exec `npm start`.
-* `./src/config/config.prod.ts`, enable when exec `npm run build`.
+* `./config/config.default.ts`.
+* `./config/config.local.ts`, enable when exec `npm start`.
+* `./config/config.prod.ts`, enable when exec `npm run build`.
 
 `config.local.ts` and `config.prod.ts` have a higher priority than `config.default.ts`
 
 ## Example
 
 ```typescript
-// ./src/config/config.default.ts
+// ./config/config.default.ts
 import { ProjectConfig } from "pri"
 
 export default {
@@ -41,12 +41,12 @@ Dist main file name.
 
 ### publicPath `string` `null`
 
-Assets public path. eg: `"//some.com"`, `"//some.com/somePath"`, `"/somePath"`.
+Assets public path. eg: `"https://www.some.com"`, `"https://www.some.com/somePath"`, `"/somePath"`.
 
 * If not set, result: `/<distPath>`.
 * If set /somePath for example, result: `/somePath/<distPath>`.
-* If set some.com for example, result: `//some.com/<distPath>`.
-* If set some.com/somePath for example, result: `//some.com/somePath/<distPath>`.
+* If set some.com for example, result: `https://www.some.com/<distPath>`.
+* If set some.com/somePath for example, result: `https://www.some.com/somePath/<distPath>`.
 
 > Only take effect on `npm run build` | `pri build`.
 
@@ -60,18 +60,12 @@ There is no need to modify the code, routing `/` can automatically maps to `/adm
 
 Only take effect on `npm run build` | `pri build`
 
-### staticBuild `boolean` `false`
-
-Generate static index file for each route, when building.
-
-Useful for static service who don't serve fallback html, like github-pages.
-
 ### customEnv `{ [key: string]: any }` `undefined`
 
 Custom env. For example:
 
 ```typescript
-// ./src/config/config.default.ts
+// ./config/config.default.ts
 export default {
   customEnv: {
     user: "ascoders"
@@ -82,7 +76,7 @@ export default {
 Then you can use it in pages:
 
 ```typescript
-// ./src/pages/index.tsx
+// ./pages/index.tsx
 import { env } from "pri/client"
 console.log(env.get("user"))
 ```

@@ -1,15 +1,15 @@
-import { Button, Divider, Icon, Layout, Menu, Switch, Tooltip } from "antd"
-import { env } from "pri/client"
-import * as React from "react"
-import * as ReactDOM from "react-dom"
-import { Link, RouteComponentProps, withRouter } from "react-router-dom"
-import * as S from "./markdown.style"
+import { Button, Divider, Icon, Layout, Menu, Switch, Tooltip } from 'antd';
+import { env } from 'pri/client';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
+import * as S from './markdown.style';
 
-import "antd/dist/antd.css"
+import 'antd/dist/antd.css';
 
-const SubMenu = Menu.SubMenu
-const MenuItemGroup = Menu.ItemGroup
-const { Header, Content, Footer, Sider } = Layout
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
+const { Header, Content, Footer, Sider } = Layout;
 
 class Props {}
 
@@ -17,23 +17,23 @@ class State {}
 
 @(withRouter as any)
 export default class Page extends React.PureComponent<Props & Partial<RouteComponentProps<any>>, State> {
-  public static defaultProps = new Props()
-  public state = new State()
+  public static defaultProps = new Props();
+  public state = new State();
 
   public render() {
-    const menuKeyPrefix = "/pri-docs"
-    const selectedKeys = (menuKeyPrefix + this.props.location.pathname).replace(/\/$/g, "")
+    const menuKeyPrefix = '/pri-docs';
+    const selectedKeys = (menuKeyPrefix + this.props.location.pathname).replace(/\/$/g, '');
 
-    return <Layout>
+    return (
+      <Layout>
         <Header>
           <Menu mode="horizontal">
             <S.Logo>Pri</S.Logo>
           </Menu>
         </Header>
-
-        <Content style={{ padding: "0 50px 0 50px" }}>
-          <Layout style={{ padding: "24px 0", background: "#fff" }}>
-            <Sider width={200} style={{ background: "#fff" }}>
+        <Content style={{ padding: '0 50px 0 50px' }}>
+          <Layout style={{ padding: '24px 0', background: '#fff' }}>
+            <Sider width={200} style={{ background: '#fff' }}>
               <Menu mode="inline" selectedKeys={[selectedKeys]}>
                 <Menu.Item key={`${menuKeyPrefix}`}>
                   <Link to="/">Setup</Link>
@@ -61,6 +61,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   <Menu.Item key={`${menuKeyPrefix}/features/built-in-data-stream`}>
                     <Link to="/features/built-in-data-stream">Built-in data stream</Link>
                   </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/features/mock`}>
+                    <Link to="/features/mock">Mock</Link>
+                  </Menu.Item>
                   <Menu.Item key={`${menuKeyPrefix}/features/environment-variable`}>
                     <Link to="/features/environment-variable">Environment variable</Link>
                   </Menu.Item>
@@ -75,11 +78,16 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   </Menu.Item>
                 </MenuItemGroup>
 
-                <MenuItemGroup key={`${menuKeyPrefix}/automatic-optimization`} title={<span>
-                      Automatic optimization&nbsp;<Tooltip title="You don't need extra code configuration, these optimizations are done automatically.">
+                <MenuItemGroup
+                  key={`${menuKeyPrefix}/automatic-optimization`}
+                  title={
+                    <span>
+                      Automatic optimization&nbsp;<Tooltip title="You do not need extra code configuration,   these optimizations are done automatically.">
                         <Icon type="question-circle-o" />
                       </Tooltip>
-                    </span>}>
+                    </span>
+                  }
+                >
                   <Menu.Item key={`${menuKeyPrefix}/automatic-optimization/typescript-support`}>
                     <Link to="/automatic-optimization/typescript-support">Typescript support</Link>
                   </Menu.Item>
@@ -137,6 +145,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   <Menu.Item key={`${menuKeyPrefix}/development/project`}>
                     <Link to="/development/project">Project</Link>
                   </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/development/service-worker`}>
+                    <Link to="/development/service-worker">Service worker</Link>
+                  </Menu.Item>
                   <Menu.Item key={`${menuKeyPrefix}/development/dev-service`}>
                     <Link to="/development/dev-service">Dev Service</Link>
                   </Menu.Item>
@@ -150,12 +161,17 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
               </Menu>
             </Sider>
 
-            <Content style={{ padding: "0 24px", minHeight: 280 }}>
+            <Content style={{ padding: '0 24px', minHeight: 280 }}>
               <S.Content>
                 {this.props.children}
 
                 <Divider style={{ marginTop: 50 }}>
-                  <a href={`https://github.com/ascoders/pri-docs/blob/master/src/pages${this.props.location.pathname === "/" ? "" : this.props.location.pathname}/index.md`} target="_blank">
+                  <a
+                    href={`https://github.com/ascoders/pri-docs/blob/master/src/pages${
+                      this.props.location.pathname === '/' ? '' : this.props.location.pathname
+                    }/index.md`}
+                    target="_blank"
+                  >
                     <Button type="dashed" icon="edit">
                       Edit this page on github.
                     </Button>
@@ -165,7 +181,8 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
             </Content>
           </Layout>
         </Content>
-        <Footer style={{ textAlign: "center" }}>Pri ©2018 Created by Pri</Footer>
+        <Footer style={{ textAlign: 'center' }}>Pri ©2018 Created by Pri</Footer>;
       </Layout>
+    );
   }
 }

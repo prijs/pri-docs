@@ -1,25 +1,25 @@
-import { Action, inject, observable } from "dob"
+import { Action, inject, observable } from 'dob';
 
-const delay = () => new Promise(resolve => setTimeout(resolve, 1000))
+const delay = () => new Promise(resolve => setTimeout(resolve, 1000));
 
 @observable
 export class ApplicationStore {
-  public testValue = 1
+  public testValue = 1;
 }
 
 export class ApplicationAction {
-  @inject(ApplicationStore) public applicationStore: ApplicationStore
+  @inject(ApplicationStore) public applicationStore: ApplicationStore;
 
   @Action
   public test() {
-    this.applicationStore.testValue++
+    this.applicationStore.testValue++;
   }
 
   @Action
   public async testAsync() {
-    await delay()
+    await delay();
     Action(() => {
-      this.applicationStore.testValue++
-    })
+      this.applicationStore.testValue++;
+    });
   }
 }

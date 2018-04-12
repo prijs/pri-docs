@@ -1,13 +1,12 @@
 # Deploy to github pages
 
-Set up `publicPath`, `baseHref` and `staticBuild` in the **Custom config**.
+Set up `publicPath`, `baseHref` in the **Custom config**.
 
 ```typescript
 // src/config/config.default.ts
 import { ProjectConfig } from "pri/client"
 
 export default {
-  staticBuild: true,
   publicPath: "/<your-repo-name>",
   baseHref: "/<your-repo-name>"
 } as ProjectConfig
@@ -22,5 +21,3 @@ Then, execute `npm i gh-pages --save-dev`, and add npm scripts:
 Finally, execute `npm run deploy`!
 
 > This is because js files will be served from `/<your-repo-name>` and the root path changed to `/<your-repo-name>` on github-pages.
-
-> `staticBuild` will generate static index file for each route.
