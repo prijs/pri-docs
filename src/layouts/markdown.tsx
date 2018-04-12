@@ -76,6 +76,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
                   <Menu.Item key={`${menuKeyPrefix}/features/dynamic-import`}>
                     <Link to="/features/dynamic-import">Dynamic import</Link>
                   </Menu.Item>
+                  <Menu.Item key={`${menuKeyPrefix}/features/test-and-code-coverage`}>
+                    <Link to="/features/test-and-code-coverage">Test and code coverage</Link>
+                  </Menu.Item>
                 </MenuItemGroup>
 
                 <MenuItemGroup
