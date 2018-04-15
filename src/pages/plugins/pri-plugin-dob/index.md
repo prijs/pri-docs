@@ -20,19 +20,19 @@ Let's try it! For example, create a store named `application`:
 **src/stores/application.tsx**
 
 ```typescript
-import { Action, inject, observable } from "dob"
+import { Action, inject, observable } from 'dob';
 
 @observable
 export class ApplicationStore {
-  public testValue = 1
+  public testValue = 1;
 }
 
 export class ApplicationAction {
-  @inject(ApplicationStore) public applicationStore: ApplicationStore
+  @inject(ApplicationStore) public applicationStore: ApplicationStore;
 
   @Action
   public test() {
-    this.applicationStore.testValue++
+    this.applicationStore.testValue++;
   }
 }
 ```
@@ -42,8 +42,8 @@ export class ApplicationAction {
 **src/pages/index.tsx**
 
 ```typescript
-import * as React from "react"
-import { stores } from "../utils/helper"
+import * as React from 'react';
+import { stores } from '../utils/helper';
 
 export default class View extends React.PureComponent<typeof stores, any> {
   render() {
@@ -53,4 +53,4 @@ export default class View extends React.PureComponent<typeof stores, any> {
 }
 ```
 
-> For more skills about using dob in pri, please see [dob docs](<[dob](https://github.com/dobjs/dob)>).
+For more skills about using dob in pri, please see [dob docs](https://github.com/dobjs/dob).

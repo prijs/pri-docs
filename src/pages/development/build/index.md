@@ -61,3 +61,20 @@ export default (instance: typeof pri) => {
   });
 };
 ```
+
+## afterProdBuild
+
+You can assets all the chunk file list or get caches after prod build by using `afterProdBuild`. For example:
+
+```typescript
+import { pri } from 'pri';
+
+export default (instance: typeof pri) => {
+  instance.build.afterProdBuild(stats => {
+    console.log(stats.hash); // Get hash name.
+    console.log(stats.assetsByChunkName); // Get thunks list.
+  });
+};
+```
+
+For more about `stats`, please see [webpack docs](https://webpack.js.org/api/stats/#structure).
