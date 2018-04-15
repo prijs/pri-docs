@@ -43,7 +43,7 @@ self.addEventListener('fetch', event => {
 });
 
 var BUNDLE_PREFIX = '__bundle__';
-var BUNDLE_VERSION = BUNDLE_PREFIX + 'v1';
+var BUNDLE_VERSION = BUNDLE_PREFIX + '243c';
 
 var bundleCaches = [
   '/pri-docs/automaticOptimizationAutoCreateProjectFiles.243c.chunk.js',
