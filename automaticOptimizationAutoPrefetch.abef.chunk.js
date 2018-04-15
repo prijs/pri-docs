@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{101:function(n,e,t){"use strict";t.r(e),e.default="# Auto prefetch\n\n`pri` can cache all bundle chunk files in service worker!\n\nIn this way, **It won't send any network request when page jumpping!**\n"}}]);
