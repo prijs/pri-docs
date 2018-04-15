@@ -42,7 +42,8 @@ self.addEventListener('fetch', event => {
   }
 });
 
-var BUNDLE_VERSION = 'v1';
+var BUNDLE_PREFIX = '__bundle__';
+var BUNDLE_VERSION = BUNDLE_PREFIX + 'v1';
 
 var bundleCaches = [
   '/pri-docs/automaticOptimizationAutoCreateProjectFiles.519c.chunk.js',
@@ -88,6 +89,22 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(BUNDLE_VERSION).then(cache => {
       return cache.addAll(bundleCaches);
+    })
+  );
+});
+
+/**
+ * Delete all bundle caches except current BUNDLE_VERSION.
+ */
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames
+          .filter(cacheName => cacheName.startsWith(BUNDLE_PREFIX))
+          .filter(cacheName => cacheName != BUNDLE_VERSION)
+          .map(cacheName => caches.delete(cacheName))
+      );
     })
   );
 });
