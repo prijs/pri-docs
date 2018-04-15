@@ -43,49 +43,50 @@ self.addEventListener('fetch', event => {
 });
 
 var BUNDLE_PREFIX = '__bundle__';
-var BUNDLE_VERSION = BUNDLE_PREFIX + 'abef';
+var BUNDLE_VERSION = BUNDLE_PREFIX + '17cb';
 
 var bundleCaches = [
-  '/pri-docs/automaticOptimizationAutoCreateProjectFiles.abef.chunk.js',
-  '/pri-docs/automaticOptimizationAutoDlls.abef.chunk.js',
-  '/pri-docs/automaticOptimizationAutoPickSharedModules.abef.chunk.js',
-  '/pri-docs/automaticOptimizationAutoPrefetch.abef.chunk.js',
-  '/pri-docs/automaticOptimizationAutomaticCodeSplitting.abef.chunk.js',
-  '/pri-docs/automaticOptimizationAutomaticHmr.abef.chunk.js',
-  '/pri-docs/automaticOptimizationImportOnDemand.abef.chunk.js',
-  '/pri-docs/automaticOptimizationScopeHoist.abef.chunk.js',
-  '/pri-docs/automaticOptimizationTreeShaking.abef.chunk.js',
-  '/pri-docs/automaticOptimizationTslintSupport.abef.chunk.js',
-  '/pri-docs/automaticOptimizationTypescriptSupport.abef.chunk.js',
-  '/pri-docs/config.abef.chunk.js',
-  '/pri-docs/developmentBuild.abef.chunk.js',
-  '/pri-docs/developmentCommands.abef.chunk.js',
-  '/pri-docs/developmentContext.abef.chunk.js',
-  '/pri-docs/developmentDevService.abef.chunk.js',
-  '/pri-docs/developmentProject.abef.chunk.js',
-  '/pri-docs/developmentServiceWorker.abef.chunk.js',
-  '/pri-docs/developmentTest.abef.chunk.js',
-  '/pri-docs/developmentWebUi.abef.chunk.js',
-  '/pri-docs/developmentWriteAPlugin.abef.chunk.js',
-  '/pri-docs/featuresBuiltInDataStream.abef.chunk.js',
-  '/pri-docs/featuresDeployToGithubPages.abef.chunk.js',
-  '/pri-docs/featuresDynamicImport.abef.chunk.js',
-  '/pri-docs/featuresEnvironmentVariable.abef.chunk.js',
-  '/pri-docs/featuresMarkdownSupport.abef.chunk.js',
-  '/pri-docs/featuresMock.abef.chunk.js',
-  '/pri-docs/featuresPageNotFound.abef.chunk.js',
-  '/pri-docs/featuresProjectDashboard.abef.chunk.js',
-  '/pri-docs/featuresScssLessCss.abef.chunk.js',
-  '/pri-docs/featuresTestAndCodeCoverage.abef.chunk.js',
-  '/pri-docs/layoutSupport.abef.chunk.js',
-  '/pri-docs/pagesAreRoutes.abef.chunk.js',
-  '/pri-docs/pluginsPriPluginDob.abef.chunk.js',
-  '/pri-docs/index.abef.chunk.js',
-  '/pri-docs/main.abef.js',
-  '/pri-docs/main.abef.css'
+  '/pri-docs/automaticOptimizationAutoCreateProjectFiles.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationAutoDlls.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationAutoPickSharedModules.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationAutoPrefetch.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationAutomaticCodeSplitting.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationAutomaticHmr.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationImportOnDemand.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationScopeHoist.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationTreeShaking.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationTslintSupport.17cb.chunk.js',
+  '/pri-docs/automaticOptimizationTypescriptSupport.17cb.chunk.js',
+  '/pri-docs/config.17cb.chunk.js',
+  '/pri-docs/developmentBuild.17cb.chunk.js',
+  '/pri-docs/developmentCommands.17cb.chunk.js',
+  '/pri-docs/developmentContext.17cb.chunk.js',
+  '/pri-docs/developmentDevService.17cb.chunk.js',
+  '/pri-docs/developmentProject.17cb.chunk.js',
+  '/pri-docs/developmentServiceWorker.17cb.chunk.js',
+  '/pri-docs/developmentTest.17cb.chunk.js',
+  '/pri-docs/developmentWebUi.17cb.chunk.js',
+  '/pri-docs/developmentWriteAPlugin.17cb.chunk.js',
+  '/pri-docs/featuresBuiltInDataStream.17cb.chunk.js',
+  '/pri-docs/featuresDeployToGithubPages.17cb.chunk.js',
+  '/pri-docs/featuresDynamicImport.17cb.chunk.js',
+  '/pri-docs/featuresEnvironmentVariable.17cb.chunk.js',
+  '/pri-docs/featuresMarkdownSupport.17cb.chunk.js',
+  '/pri-docs/featuresMock.17cb.chunk.js',
+  '/pri-docs/featuresPageNotFound.17cb.chunk.js',
+  '/pri-docs/featuresProjectDashboard.17cb.chunk.js',
+  '/pri-docs/featuresScssLessCss.17cb.chunk.js',
+  '/pri-docs/featuresTestAndCodeCoverage.17cb.chunk.js',
+  '/pri-docs/layoutSupport.17cb.chunk.js',
+  '/pri-docs/pagesAreRoutes.17cb.chunk.js',
+  '/pri-docs/pluginsPriPluginDob.17cb.chunk.js',
+  '/pri-docs/index.17cb.chunk.js',
+  '/pri-docs/main.17cb.js',
+  '/pri-docs/main.17cb.css'
 ];
 
 self.addEventListener('install', event => {
+  console.log('install');
   event.waitUntil(
     caches.open(BUNDLE_VERSION).then(cache => {
       return cache.addAll(bundleCaches);
@@ -97,13 +98,17 @@ self.addEventListener('install', event => {
  * Delete all bundle caches except current BUNDLE_VERSION.
  */
 self.addEventListener('activate', event => {
+  console.log('activate');
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames
           .filter(cacheName => cacheName.startsWith(BUNDLE_PREFIX))
-          .filter(cacheName => cacheName != BUNDLE_VERSION)
-          .map(cacheName => caches.delete(cacheName))
+          .filter(cacheName => cacheName !== BUNDLE_VERSION)
+          .map(cacheName => {
+            console.log('delete cacheName');
+            caches.delete(cacheName);
+          })
       );
     })
   );
