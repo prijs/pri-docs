@@ -8,7 +8,7 @@ First, set your `web-entry` path in plugin's `package.json`:
 {
   "pri": {
     "type": "plugin",
-    "web-entry": "./built/web/index.js"
+    "web-entry": "./built/src/web/index.js"
   }
 }
 ```
@@ -16,18 +16,18 @@ First, set your `web-entry` path in plugin's `package.json`:
 Then, create file `./src/web/index.tsx`:
 
 ```tsx
-import * as React from "react"
+import * as React from 'react';
 
 class View extends React.Component<any, any> {
   public render() {
-    return <div>Test</div>
+    return <div>Test</div>;
   }
 }
 
 export default {
-  position: "menu",
+  position: 'menu',
   view: View
-}
+};
 ```
 
 Then, you plugin will be loaded into the hole of `menu`.
