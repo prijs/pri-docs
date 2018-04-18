@@ -16,6 +16,12 @@
       "scripthost"
     ]
   },
+  "include": [
+    ".temp/**/*",
+    "src/**/*",
+    "config/**/*",
+    "tests/**/*"
+  ],
   "exclude": [
     "node_modules",
     "built",
