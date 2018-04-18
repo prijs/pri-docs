@@ -14,11 +14,11 @@ You can create these files to config `pri`:
 
 ```typescript
 // ./config/config.default.ts
-import { ProjectConfig } from "pri"
+import { ProjectConfig } from 'pri';
 
 export default {
-  distDir: "output"
-} as ProjectConfig
+  distDir: 'output'
+} as ProjectConfig;
 ```
 
 ## Config options &lt;type&gt; &lt;defaultValue&gt;
@@ -68,19 +68,43 @@ Custom env. For example:
 // ./config/config.default.ts
 export default {
   customEnv: {
-    user: "ascoders"
+    user: 'ascoders'
   }
-} as ProjectConfig
+} as ProjectConfig;
 ```
 
 Then you can use it in pages:
 
 ```typescript
 // ./pages/index.tsx
-import { env } from "pri/client"
-console.log(env.get("user"))
+import { env } from 'pri/client';
+console.log(env.get('user'));
 ```
 
 ### useHttps `boolean` `true`
 
 Whether use https for dev server and preview server.
+
+### useServiceWorker `boolean` `false`
+
+**Experiment**
+
+Wether use service worker.
+
+> Warning: if disable it, mocks, prefetch, serverRender will become invalid.
+
+### prefetchChunks `boolean` `false`
+
+**Experiment**
+
+Wether pre fetch all chunks by service worker.
+
+> Warning: depend on service worker, should set useServiceWorker=true first.
+
+### clientServerRender `boolean` `false`
+
+**Experiment**
+
+Wether enable client server render by service worker.
+
+> Warning: depend on service worker, should set useServiceWorker=true first.

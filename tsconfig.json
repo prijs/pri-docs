@@ -9,7 +9,6 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "outDir": "built",
-    "rootDir": "./",
     "lib": [
       "dom",
       "es5",
