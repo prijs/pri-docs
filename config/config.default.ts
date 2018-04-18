@@ -5,5 +5,6 @@ export default {
   publicPath: '/pri-docs',
   baseHref: '/pri-docs',
   useServiceWorker: true,
-  prefetchChunks: true
+  prefetchChunks: true,
+  clientServerRender: true
 } as ProjectConfig;
