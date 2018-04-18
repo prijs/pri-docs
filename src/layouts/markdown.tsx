@@ -190,6 +190,13 @@ const data: IMenuGroup[] = [
   }
 ];
 
+function withoutEndSlash(str: string) {
+  if (str === '/') {
+    return str;
+  }
+  return str.replace(/\/$/g, '');
+}
+
 @(withRouter as any)
 export default class Page extends React.PureComponent<Props & Partial<RouteComponentProps<any>>, State> {
   public static defaultProps = new Props();
@@ -232,7 +239,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
 
             <a
               href={`https://github.com/ascoders/pri-docs/blob/master/src/pages${
-                this.props.location.pathname === '/' ? '' : this.props.location.pathname
+                withoutEndSlash(this.props.location.pathname) === '/'
+                  ? ''
+                  : withoutEndSlash(this.props.location.pathname)
               }/index.md`}
               className="edit-on-github"
               target="_blank"
@@ -252,7 +261,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
           {group.href ? (
             <Link
               to={group.href}
-              className={`menu-group-title ${group.href === this.props.location.pathname ? 'active' : null}`}
+              className={`menu-group-title ${
+                group.href === withoutEndSlash(this.props.location.pathname) ? 'active' : null
+              }`}
             >
               {group.title}
             </Link>
@@ -273,7 +284,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
       return (
         <Link
           key={index}
-          className={`menu-item ${menuItem.href === this.props.location.pathname ? 'active' : null}`}
+          className={`menu-item ${menuItem.href === withoutEndSlash(this.props.location.pathname) ? 'active' : null}`}
           to={menuItem.href}
         >
           {menuItem.title}
