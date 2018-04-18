@@ -27,6 +27,16 @@ export default {
 
 Title for html &lt;title&gt;.
 
+### devPort `number` `[Auto get free port]`
+
+localhost port when execute `npm start`. pri will find a free port by default, and for a special case, you can change it to a fixed port:
+
+```js
+{
+  devPort: 9999;
+}
+```
+
 ### distDir `string` `"dist"`
 
 Dist main file name.
