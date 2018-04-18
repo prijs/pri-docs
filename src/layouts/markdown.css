@@ -745,9 +745,7 @@ a.header-item:hover {
   min-width: 220px;
 }
 
-.left.relative {
-  height: 100vh;
-}
+.left.relative {}
 
 .left.fixed {
   position: fixed;

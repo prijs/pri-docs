@@ -195,9 +195,16 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
   public static defaultProps = new Props();
   public state = new State();
 
+  private leftDom: HTMLElement = null;
+  private rightDom: HTMLElement = null;
+
   public componentDidMount() {
+    const selfDom = ReactDOM.findDOMNode(this) as HTMLElement;
+    this.leftDom = selfDom.querySelector('.left');
+    this.rightDom = selfDom.querySelector('.right');
+
     document.onscroll = event => {
-      if (window.scrollY > 51) {
+      if (window.scrollY > 50 && this.rightDom.offsetHeight > this.leftDom.offsetHeight) {
         this.setState({ absoluteLeftContainer: true });
       } else {
         this.setState({ absoluteLeftContainer: false });
