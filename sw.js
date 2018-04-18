@@ -43,45 +43,45 @@ self.addEventListener('fetch', event => {
 });
 
 var BUNDLE_PREFIX = '__bundle__';
-var BUNDLE_VERSION = BUNDLE_PREFIX + '024f';
+var BUNDLE_VERSION = BUNDLE_PREFIX + '8c36';
 
 var bundleCaches = [
-  '/pri-docs/404Page.024f.chunk.js',
-  '/pri-docs/autoDlls.024f.chunk.js',
-  '/pri-docs/autoPickSharedModules.024f.chunk.js',
-  '/pri-docs/autoPrefetch.024f.chunk.js',
-  '/pri-docs/automaticCodeSplitting.024f.chunk.js',
-  '/pri-docs/automaticHmr.024f.chunk.js',
-  '/pri-docs/config.024f.chunk.js',
-  '/pri-docs/deployToGithubPages.024f.chunk.js',
-  '/pri-docs/dynamicImport.024f.chunk.js',
-  '/pri-docs/env.024f.chunk.js',
-  '/pri-docs/importOnDemand.024f.chunk.js',
-  '/pri-docs/markdownPage.024f.chunk.js',
-  '/pri-docs/mockRequest.024f.chunk.js',
-  '/pri-docs/pageLayout.024f.chunk.js',
-  '/pri-docs/pages.024f.chunk.js',
-  '/pri-docs/pluginBuild.024f.chunk.js',
-  '/pri-docs/pluginCommands.024f.chunk.js',
-  '/pri-docs/pluginContext.024f.chunk.js',
-  '/pri-docs/pluginDevService.024f.chunk.js',
-  '/pri-docs/pluginProject.024f.chunk.js',
-  '/pri-docs/pluginServiceWorker.024f.chunk.js',
-  '/pri-docs/pluginSetup.024f.chunk.js',
-  '/pri-docs/pluginTest.024f.chunk.js',
-  '/pri-docs/pluginWebUi.024f.chunk.js',
-  '/pri-docs/priPluginDob.024f.chunk.js',
-  '/pri-docs/projectFiles.024f.chunk.js',
-  '/pri-docs/scopeHoist.024f.chunk.js',
-  '/pri-docs/styles.024f.chunk.js',
-  '/pri-docs/test.024f.chunk.js',
-  '/pri-docs/treeShaking.024f.chunk.js',
-  '/pri-docs/tslint.024f.chunk.js',
-  '/pri-docs/typescript.024f.chunk.js',
-  '/pri-docs/webui.024f.chunk.js',
-  '/pri-docs/index.024f.chunk.js',
-  '/pri-docs/main.024f.js',
-  '/pri-docs/main.024f.css'
+  '/pri-docs/404Page.8c36.chunk.js',
+  '/pri-docs/autoDlls.8c36.chunk.js',
+  '/pri-docs/autoPickSharedModules.8c36.chunk.js',
+  '/pri-docs/autoPrefetch.8c36.chunk.js',
+  '/pri-docs/automaticCodeSplitting.8c36.chunk.js',
+  '/pri-docs/automaticHmr.8c36.chunk.js',
+  '/pri-docs/config.8c36.chunk.js',
+  '/pri-docs/deployToGithubPages.8c36.chunk.js',
+  '/pri-docs/dynamicImport.8c36.chunk.js',
+  '/pri-docs/env.8c36.chunk.js',
+  '/pri-docs/importOnDemand.8c36.chunk.js',
+  '/pri-docs/markdownPage.8c36.chunk.js',
+  '/pri-docs/mockRequest.8c36.chunk.js',
+  '/pri-docs/pageLayout.8c36.chunk.js',
+  '/pri-docs/pages.8c36.chunk.js',
+  '/pri-docs/pluginBuild.8c36.chunk.js',
+  '/pri-docs/pluginCommands.8c36.chunk.js',
+  '/pri-docs/pluginContext.8c36.chunk.js',
+  '/pri-docs/pluginDevService.8c36.chunk.js',
+  '/pri-docs/pluginProject.8c36.chunk.js',
+  '/pri-docs/pluginServiceWorker.8c36.chunk.js',
+  '/pri-docs/pluginSetup.8c36.chunk.js',
+  '/pri-docs/pluginTest.8c36.chunk.js',
+  '/pri-docs/pluginWebUi.8c36.chunk.js',
+  '/pri-docs/priPluginDob.8c36.chunk.js',
+  '/pri-docs/projectFiles.8c36.chunk.js',
+  '/pri-docs/scopeHoist.8c36.chunk.js',
+  '/pri-docs/styles.8c36.chunk.js',
+  '/pri-docs/test.8c36.chunk.js',
+  '/pri-docs/treeShaking.8c36.chunk.js',
+  '/pri-docs/tslint.8c36.chunk.js',
+  '/pri-docs/typescript.8c36.chunk.js',
+  '/pri-docs/webui.8c36.chunk.js',
+  '/pri-docs/index.8c36.chunk.js',
+  '/pri-docs/main.8c36.js',
+  '/pri-docs/main.8c36.css'
 ];
 
 self.addEventListener('install', event => {
@@ -127,8 +127,27 @@ self.addEventListener('fetch', event => {
   }
 });
 
+var SSR_BUNDLE_PREFIX = '__ssr_bundle__';
+var SSR_BUNDLE_VERSION = SSR_BUNDLE_PREFIX + '8c36';
+
 var currentCacheSsrRequest = null;
 var currentCacheSsrOriginHtml = null;
+
+/**
+ * Delete all bundle caches except current SSR_BUNDLE_VERSION.
+ */
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames
+          .filter(cacheName => cacheName.startsWith(SSR_BUNDLE_PREFIX))
+          .filter(cacheName => cacheName !== SSR_BUNDLE_VERSION)
+          .map(cacheName => caches.delete(cacheName))
+      );
+    })
+  );
+});
 
 // Get ssr content from client, and save to cache.
 self.addEventListener('message', event => {
@@ -154,7 +173,7 @@ self.addEventListener('message', event => {
 
     const ssrResponse = new Response(textAddScript, responseInit);
 
-    caches.open(BUNDLE_VERSION).then(cache => {
+    caches.open(SSR_BUNDLE_VERSION).then(cache => {
       cache.put(currentCacheSsrRequest, ssrResponse);
     });
   }
@@ -168,7 +187,7 @@ self.addEventListener('fetch', event => {
     event.request.headers.get('accept').includes('text/html')
   ) {
     event.respondWith(
-      caches.open(BUNDLE_VERSION).then(cache => {
+      caches.open(SSR_BUNDLE_VERSION).then(cache => {
         return cache.match(event.request).then(response => {
           if (response) {
             return response;
