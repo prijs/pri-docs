@@ -377,11 +377,11 @@
   content: '';
 }
 
-.markdown-body>*:first-child {
+.markdown-body > *:first-child {
   margin-top: 0 !important;
 }
 
-.markdown-body>*:last-child {
+.markdown-body > *:last-child {
   margin-bottom: 0 !important;
 }
 
@@ -426,11 +426,11 @@
   border-left: 0.25em solid #dfe2e5;
 }
 
-.markdown-body blockquote> :first-child {
+.markdown-body blockquote > :first-child {
   margin-top: 0;
 }
 
-.markdown-body blockquote> :last-child {
+.markdown-body blockquote > :last-child {
   margin-bottom: 0;
 }
 
@@ -535,11 +535,11 @@
   word-wrap: break-all;
 }
 
-.markdown-body li>p {
+.markdown-body li > p {
   margin-top: 16px;
 }
 
-.markdown-body li+li {
+.markdown-body li + li {
   margin-top: 0.25em;
 }
 
@@ -611,7 +611,7 @@
   word-wrap: normal;
 }
 
-.markdown-body pre>code {
+.markdown-body pre > code {
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -671,7 +671,7 @@
   box-shadow: inset 0 -1px 0 #c6cbd1;
 }
 
-.markdown-body :checked+.radio-label {
+.markdown-body :checked + .radio-label {
   position: relative;
   z-index: 1;
   border-color: #0366d6;
@@ -681,7 +681,7 @@
   list-style-type: none;
 }
 
-.markdown-body .task-list-item+.task-list-item {
+.markdown-body .task-list-item + .task-list-item {
   margin-top: 3px;
 }
 
@@ -745,7 +745,8 @@ a.header-item:hover {
   min-width: 220px;
 }
 
-.left.relative {}
+.left.relative {
+}
 
 .left.fixed {
   position: fixed;
@@ -758,6 +759,27 @@ a.header-item:hover {
 .left-static-box {
   width: 220px;
   min-width: 220px;
+}
+
+.left-menu-trigger {
+  display: none;
+  color: #9090aa;
+  font-size: 13px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .left-static-box {
+    position: absolute;
+    display: none;
+  }
+  .left-menu-trigger {
+    display: block;
+  }
+  .markdown-body pre {
+    width: calc(100vw - 82px);
+  }
 }
 
 .right {

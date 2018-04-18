@@ -223,6 +223,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
     return (
       <div className="container">
         <div className="header">
+          <div className="left-menu-trigger">expand</div>
           <div className="header-item-logo">Pri</div>
           <a href="https://github.com/ascoders/pri" target="_blank" className="header-item">
             View on Github
