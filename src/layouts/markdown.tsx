@@ -65,6 +65,10 @@ const data: IMenuGroup[] = [
       {
         href: '/deploy-to-github-pages',
         title: 'Deploy to github pages'
+      },
+      {
+        href: '/deploy-to-backend',
+        title: 'Deploy to backend'
       }
     ]
   },
@@ -86,6 +90,10 @@ const data: IMenuGroup[] = [
       {
         href: '/webui',
         title: 'WebUI'
+      },
+      {
+        href: '/debug-online',
+        title: 'Debug online'
       }
     ]
   },

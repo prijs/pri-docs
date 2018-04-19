@@ -12,8 +12,9 @@ You can create these files to config `pri`:
 
 ## Example
 
+**`./config/config.default.ts`**
+
 ```typescript
-// ./config/config.default.ts
 import { ProjectConfig } from 'pri';
 
 export default {
@@ -37,19 +38,21 @@ localhost port when execute `npm start`. pri will find a free port by default, a
 }
 ```
 
+### outFileName `string` `"main.[hash].js"`
+
+Output main file name.
+
+### outCssFileName `string` `"main.[hash].css"`
+
+Output main css file name.
+
 ### distDir `string` `"dist"`
 
 Dist main file name.
 
 > Only take effect on `npm run build` | `pri build`.
 
-### distFileName `string` `"main"`
-
-Dist main file name.
-
-> Only take effect on `npm run build` | `pri build`.
-
-### publicPath `string` `null`
+### publicPath `string` `/`
 
 Assets public path. eg: `"https://www.some.com"`, `"https://www.some.com/somePath"`, `"/somePath"`.
 
