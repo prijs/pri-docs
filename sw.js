@@ -43,45 +43,45 @@ self.addEventListener('fetch', event => {
 });
 
 var BUNDLE_PREFIX = '__bundle__';
-var BUNDLE_VERSION = BUNDLE_PREFIX + '88ee';
+var BUNDLE_VERSION = BUNDLE_PREFIX + '6ffe';
 
 var bundleCaches = [
-  '/pri-docs/404Page.88ee.chunk.js',
-  '/pri-docs/autoDlls.88ee.chunk.js',
-  '/pri-docs/autoPickSharedModules.88ee.chunk.js',
-  '/pri-docs/autoPrefetch.88ee.chunk.js',
-  '/pri-docs/automaticCodeSplitting.88ee.chunk.js',
-  '/pri-docs/automaticHmr.88ee.chunk.js',
-  '/pri-docs/config.88ee.chunk.js',
-  '/pri-docs/deployToGithubPages.88ee.chunk.js',
-  '/pri-docs/dynamicImport.88ee.chunk.js',
-  '/pri-docs/env.88ee.chunk.js',
-  '/pri-docs/importOnDemand.88ee.chunk.js',
-  '/pri-docs/markdownPage.88ee.chunk.js',
-  '/pri-docs/mockRequest.88ee.chunk.js',
-  '/pri-docs/pageLayout.88ee.chunk.js',
-  '/pri-docs/pages.88ee.chunk.js',
-  '/pri-docs/pluginBuild.88ee.chunk.js',
-  '/pri-docs/pluginCommands.88ee.chunk.js',
-  '/pri-docs/pluginContext.88ee.chunk.js',
-  '/pri-docs/pluginDevService.88ee.chunk.js',
-  '/pri-docs/pluginProject.88ee.chunk.js',
-  '/pri-docs/pluginServiceWorker.88ee.chunk.js',
-  '/pri-docs/pluginSetup.88ee.chunk.js',
-  '/pri-docs/pluginTest.88ee.chunk.js',
-  '/pri-docs/pluginWebUi.88ee.chunk.js',
-  '/pri-docs/priPluginDob.88ee.chunk.js',
-  '/pri-docs/projectFiles.88ee.chunk.js',
-  '/pri-docs/scopeHoist.88ee.chunk.js',
-  '/pri-docs/styles.88ee.chunk.js',
-  '/pri-docs/test.88ee.chunk.js',
-  '/pri-docs/treeShaking.88ee.chunk.js',
-  '/pri-docs/tslint.88ee.chunk.js',
-  '/pri-docs/typescript.88ee.chunk.js',
-  '/pri-docs/webui.88ee.chunk.js',
-  '/pri-docs/index.88ee.chunk.js',
-  '/pri-docs/main.88ee.js',
-  '/pri-docs/main.88ee.css'
+  '/pri-docs/404Page.6ffe.chunk.js',
+  '/pri-docs/autoDlls.6ffe.chunk.js',
+  '/pri-docs/autoPickSharedModules.6ffe.chunk.js',
+  '/pri-docs/autoPrefetch.6ffe.chunk.js',
+  '/pri-docs/automaticCodeSplitting.6ffe.chunk.js',
+  '/pri-docs/automaticHmr.6ffe.chunk.js',
+  '/pri-docs/config.6ffe.chunk.js',
+  '/pri-docs/deployToGithubPages.6ffe.chunk.js',
+  '/pri-docs/dynamicImport.6ffe.chunk.js',
+  '/pri-docs/env.6ffe.chunk.js',
+  '/pri-docs/importOnDemand.6ffe.chunk.js',
+  '/pri-docs/markdownPage.6ffe.chunk.js',
+  '/pri-docs/mockRequest.6ffe.chunk.js',
+  '/pri-docs/pageLayout.6ffe.chunk.js',
+  '/pri-docs/pages.6ffe.chunk.js',
+  '/pri-docs/pluginBuild.6ffe.chunk.js',
+  '/pri-docs/pluginCommands.6ffe.chunk.js',
+  '/pri-docs/pluginContext.6ffe.chunk.js',
+  '/pri-docs/pluginDevService.6ffe.chunk.js',
+  '/pri-docs/pluginProject.6ffe.chunk.js',
+  '/pri-docs/pluginServiceWorker.6ffe.chunk.js',
+  '/pri-docs/pluginSetup.6ffe.chunk.js',
+  '/pri-docs/pluginTest.6ffe.chunk.js',
+  '/pri-docs/pluginWebUi.6ffe.chunk.js',
+  '/pri-docs/priPluginDob.6ffe.chunk.js',
+  '/pri-docs/projectFiles.6ffe.chunk.js',
+  '/pri-docs/scopeHoist.6ffe.chunk.js',
+  '/pri-docs/styles.6ffe.chunk.js',
+  '/pri-docs/test.6ffe.chunk.js',
+  '/pri-docs/treeShaking.6ffe.chunk.js',
+  '/pri-docs/tslint.6ffe.chunk.js',
+  '/pri-docs/typescript.6ffe.chunk.js',
+  '/pri-docs/webui.6ffe.chunk.js',
+  '/pri-docs/index.6ffe.chunk.js',
+  '/pri-docs/main.6ffe.js',
+  '/pri-docs/main.6ffe.css'
 ];
 
 self.addEventListener('install', event => {
@@ -128,7 +128,7 @@ self.addEventListener('fetch', event => {
 });
 
 var SSR_BUNDLE_PREFIX = '__ssr_bundle__';
-var SSR_BUNDLE_VERSION = SSR_BUNDLE_PREFIX + '88ee';
+var SSR_BUNDLE_VERSION = SSR_BUNDLE_PREFIX + '6ffe';
 
 var currentCacheSsrRequest = null;
 var currentCacheSsrOriginHtml = null;
