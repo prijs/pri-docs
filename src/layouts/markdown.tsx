@@ -94,6 +94,10 @@ const data: IMenuGroup[] = [
       {
         href: '/debug-online',
         title: 'Debug online'
+      },
+      {
+        href: '/bundle-analyse',
+        title: 'Bundle analyse'
       }
     ]
   },
