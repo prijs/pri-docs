@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[32],{168:function(n,t,e){"use strict";e.r(t),t.default="# Tslint\n\nAfter `pri` was installed, [tslint](https://www.npmjs.com/package/tslint) will take effect automatically.\n\n> It's enforce to check when execute `npm run build`, so you can't skip check!\n"}}]);
