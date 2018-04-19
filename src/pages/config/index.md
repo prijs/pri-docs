@@ -97,15 +97,11 @@ Whether use https for dev server and preview server.
 
 ### useServiceWorker `boolean` `false`
 
-**Experiment**
-
 Wether use service worker.
 
 > Warning: if disable it, mocks, prefetch, serverRender will become invalid.
 
 ### prefetchChunks `boolean` `false`
-
-**Experiment**
 
 Wether pre fetch all chunks by service worker.
 
@@ -113,7 +109,7 @@ Wether pre fetch all chunks by service worker.
 
 ### clientServerRender `boolean` `false`
 
-**Experiment**
+_Experiment._
 
 Wether enable client server render by service worker.
 
