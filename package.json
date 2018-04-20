@@ -8,7 +8,8 @@
     "start": "pri",
     "build": "pri build",
     "preview": "pri preview",
-    "deploy": "pri build && gh-pages -d dist"
+    "deploy": "pri build && gh-pages -d dist",
+    "analyse": "pri analyse"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,7 @@
   },
   "homepage": "https://github.com/ascoders/pri-docs#readme",
   "dependencies": {
-    "pri": "^0.7.15",
+    "pri": "^0.7.17",
     "pri-plugin-dob": "^1.0.4",
     "react-custom-scrollbars": "^4.2.1"
   },

@@ -34,27 +34,27 @@ const data: IMenuGroup[] = [
         title: 'Guide'
       },
       {
-        href: '/pages',
+        href: '/pages/',
         title: 'Pages'
       },
       {
-        href: '/page-layout',
+        href: '/page-layout/',
         title: 'Page Layout'
       },
       {
-        href: '/config',
+        href: '/config/',
         title: 'Config'
       },
       {
-        href: '/markdown-page',
+        href: '/markdown-page/',
         title: 'Markdown page'
       },
       {
-        href: '/styles',
+        href: '/styles/',
         title: 'Styles'
       },
       {
-        href: '/test',
+        href: '/test/',
         title: 'Test'
       }
     ]
@@ -63,11 +63,11 @@ const data: IMenuGroup[] = [
     title: 'Deploy',
     childs: [
       {
-        href: '/deploy-to-github-pages',
+        href: '/deploy-to-github-pages/',
         title: 'Deploy to github pages'
       },
       {
-        href: '/deploy-to-backend',
+        href: '/deploy-to-backend/',
         title: 'Deploy to backend'
       }
     ]
@@ -76,27 +76,27 @@ const data: IMenuGroup[] = [
     title: 'Advance topics',
     childs: [
       {
-        href: '/env',
+        href: '/env/',
         title: 'Env'
       },
       {
-        href: '/mock-request',
+        href: '/mock-request/',
         title: 'Mock request'
       },
       {
-        href: '/404-page',
+        href: '/404-page/',
         title: '404 Page'
       },
       {
-        href: '/webui',
+        href: '/webui/',
         title: 'WebUI'
       },
       {
-        href: '/debug-online',
+        href: '/debug-online/',
         title: 'Debug online'
       },
       {
-        href: '/bundle-analyse',
+        href: '/bundle-analyse/',
         title: 'Bundle analyse'
       }
     ]
@@ -105,51 +105,51 @@ const data: IMenuGroup[] = [
     title: 'Features',
     childs: [
       {
-        href: '/dynamic-import',
+        href: '/dynamic-import/',
         title: 'Dynamic import'
       },
       {
-        href: '/typescript',
+        href: '/typescript/',
         title: 'Typescript'
       },
       {
-        href: '/tslint',
+        href: '/tslint/',
         title: 'Tslint'
       },
       {
-        href: '/import-on-demand',
+        href: '/import-on-demand/',
         title: 'Import on demand'
       },
       {
-        href: '/project-files',
+        href: '/project-files/',
         title: 'Project files'
       },
       {
-        href: '/auto-pick-shared-modules',
+        href: '/auto-pick-shared-modules/',
         title: 'Auto pick shared modules'
       },
       {
-        href: '/automatic-hmr',
+        href: '/automatic-hmr/',
         title: 'Automatic HMR'
       },
       {
-        href: '/automatic-code-splitting',
+        href: '/automatic-code-splitting/',
         title: 'Automatic code splitting'
       },
       {
-        href: '/tree-shaking',
+        href: '/tree-shaking/',
         title: 'Tree shaking'
       },
       {
-        href: '/scope-hoist',
+        href: '/scope-hoist/',
         title: 'Scope hoist'
       },
       {
-        href: '/auto-dlls',
+        href: '/auto-dlls/',
         title: 'Auto dlls'
       },
       {
-        href: '/auto-prefetch',
+        href: '/auto-prefetch/',
         title: 'Auto prefetch'
       }
     ]
@@ -158,7 +158,7 @@ const data: IMenuGroup[] = [
     title: 'Plugins',
     childs: [
       {
-        href: '/pri-plugin-dob',
+        href: '/pri-plugin-dob/',
         title: 'pri-plugin-dob'
       }
     ]
@@ -167,46 +167,49 @@ const data: IMenuGroup[] = [
     title: 'Write Plugins',
     childs: [
       {
-        href: '/plugin-setup',
+        href: '/plugin-setup/',
         title: 'Setup'
       },
       {
-        href: '/plugin-context',
+        href: '/plugin-context/',
         title: 'Context'
       },
       {
-        href: '/plugin-build',
+        href: '/plugin-build/',
         title: 'Build'
       },
       {
-        href: '/plugin-commands',
+        href: '/plugin-commands/',
         title: 'Commands'
       },
       {
-        href: '/plugin-project',
+        href: '/plugin-project/',
         title: 'Project'
       },
       {
-        href: '/plugin-service-worker',
+        href: '/plugin-service-worker/',
         title: 'Service worker'
       },
       {
-        href: '/plugin-web-ui',
+        href: '/plugin-web-ui/',
         title: 'WebUI'
       },
       {
-        href: '/plugin-test',
+        href: '/plugin-test/',
         title: 'Test'
       }
     ]
   }
 ];
 
-function withoutEndSlash(str: string) {
+function withEndSlash(str: string) {
   if (str === '/') {
     return str;
   }
-  return str.replace(/\/$/g, '');
+  if (!str.endsWith('/')) {
+    return str + '/';
+  }
+  return str;
 }
 
 @(withRouter as any)
@@ -252,9 +255,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
 
             <a
               href={`https://github.com/ascoders/pri-docs/blob/master/src/pages${
-                withoutEndSlash(this.props.location.pathname) === '/'
-                  ? ''
-                  : withoutEndSlash(this.props.location.pathname)
+                withEndSlash(this.props.location.pathname) === '/' ? '' : withEndSlash(this.props.location.pathname)
               }/index.md`}
               className="edit-on-github"
               target="_blank"
@@ -275,7 +276,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
             <Link
               to={group.href}
               className={`menu-group-title ${
-                group.href === withoutEndSlash(this.props.location.pathname) ? 'active' : null
+                group.href === withEndSlash(this.props.location.pathname) ? 'active' : null
               }`}
             >
               {group.title}
@@ -297,7 +298,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
       return (
         <Link
           key={index}
-          className={`menu-item ${menuItem.href === withoutEndSlash(this.props.location.pathname) ? 'active' : null}`}
+          className={`menu-item ${menuItem.href === withEndSlash(this.props.location.pathname) ? 'active' : null}`}
           to={menuItem.href}
         >
           {menuItem.title}
