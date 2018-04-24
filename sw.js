@@ -43,7 +43,7 @@ self.addEventListener('fetch', event => {
 });
 
 var SSR_BUNDLE_PREFIX = '__ssr_bundle__';
-var SSR_BUNDLE_VERSION = SSR_BUNDLE_PREFIX + 'ec65';
+var SSR_BUNDLE_VERSION = SSR_BUNDLE_PREFIX + '760c';
 
 var currentCacheSsrRequest = null;
 var currentCacheSsrOriginHtml = null;
