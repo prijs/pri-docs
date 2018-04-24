@@ -713,7 +713,7 @@ body {
   border-bottom: solid 1px #dfe2e7;
   padding: 15px 15px 15px 30px;
   zoom: 1;
-  line-height: 20px;
+  height: 50px;
   position: relative;
 }
 
@@ -791,28 +791,26 @@ a.header-item:hover {
 .right {
   position: relative;
   display: flex;
+  flex-direction: column;
   padding-top: 30px;
   padding-bottom: 40px;
   padding-left: 40px;
+  padding-right: 40px;
   flex-grow: 1;
 }
 
 .edit-on-github {
-  position: absolute;
-  right: 0;
-  top: 0;
   outline: none;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-size: 16px;
+  text-decoration: none;
+  color: #4e6e8e;
 }
 
-.edit-on-github button {
-  padding: 10px;
-  outline: none;
-  border: 1px solid #ddd;
-  border-top: none;
-  border-right: none;
-  border-bottom-left-radius: 5px;
-  font-size: 13px;
-  cursor: pointer;
+.edit-on-github:hover {
+  text-decoration: underline;
 }
 
 .menu-group-container {
@@ -888,4 +886,35 @@ a.menu-group-title {
 
 a.menu-group-title:hover {
   color: #228a8a;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+#doc-search {
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  padding: 5px;
+  font-size: 13px;
+  color: #666;
+  width: 300px;
+}
+
+.algolia-docsearch-suggestion--content .algolia-docsearch-suggestion--highlight {
+  background-color: #dcdcfb !important;
+  color: #6b6bff !important;
 }

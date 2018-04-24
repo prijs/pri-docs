@@ -2,9 +2,11 @@ import { env } from 'pri/client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
-import * as S from './markdown.style';
 
 const Scroll = require('react-custom-scrollbars').default;
+
+const docSearch = require('docsearch.js');
+import 'docsearch.js/dist/cdn/docsearch.min.css';
 
 import './markdown.css';
 
@@ -232,17 +234,33 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
         this.setState({ absoluteLeftContainer: false });
       }
     };
+
+    docSearch({
+      apiKey: '31acf7207650a89ce529a915dab760f0',
+      indexName: 'prijs',
+      inputSelector: '#doc-search',
+      handleSelected: (input, event, suggestion) => {
+        const targetUrl = new URL(suggestion.url);
+        this.props.history.push(targetUrl.pathname.replace(/^\/pri-docs/g, ''));
+      }
+    });
   }
 
   public render() {
     return (
       <div className="container">
         <div className="header">
-          <div className="left-menu-trigger">expand</div>
-          <div className="header-item-logo">Pri</div>
-          <a href="https://github.com/ascoders/pri" target="_blank" className="header-item">
-            View on Github
-          </a>
+          <div className="header-left">
+            <div className="left-menu-trigger">expand</div>
+            <div className="header-item-logo">Pri</div>
+            <a href="https://github.com/ascoders/pri" target="_blank" className="header-item">
+              View on Github
+            </a>
+          </div>
+
+          <div className="header-right">
+            <input id="doc-search" placeholder="Search documents..." />
+          </div>
         </div>
         <div className="body">
           <div className="left-static-box">
@@ -260,7 +278,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
               className="edit-on-github"
               target="_blank"
             >
-              <button type="dashed">Edit this page on github.</button>
+              Edit this page on github.
             </a>
           </div>
         </div>
