@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[29],{176:function(o,e){o.exports="<h1>Scope Hoist</h1>\n<p>In comparison, tools like Closure Compiler and RollupJS ‘hoist’ or concatenate the scope of all your modules into one closure and allow for your code to have a faster execution time in the browser. Pri do this by using webpack.</p>\n"}}]);
