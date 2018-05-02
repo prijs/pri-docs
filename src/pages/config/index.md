@@ -46,6 +46,14 @@ Output main file name.
 
 Output main css file name.
 
+### devUrl `string` `null`
+
+Specify the development url, work both for `npm start` and `npm run preview`.
+
+In most scenes, it should not be configured.
+
+> Conflict with `devPort`
+
 ### distDir `string` `"dist"`
 
 Dist main file name.

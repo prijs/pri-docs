@@ -239,7 +239,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
       apiKey: '31acf7207650a89ce529a915dab760f0',
       indexName: 'prijs',
       inputSelector: '#doc-search',
-      handleSelected: (input, event, suggestion) => {
+      handleSelected: (input: any, event: any, suggestion: any) => {
         const targetUrl = new URL(suggestion.url);
         this.props.history.push(targetUrl.pathname.replace(/^\/pri-docs/g, ''));
       }
