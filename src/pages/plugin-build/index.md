@@ -27,6 +27,21 @@ Some times, we want to modified some loader's options instead of the hold config
 
 `.build.pipeStyleLoaderOptions` allow you to modify the options of `style-loader`.
 
+For example:
+
+```typescript
+import { pri } from 'pri';
+
+export default (instance: typeof pri) => {
+  instance.build.pipeStyleLoaderOptions((env, options) => {
+    return {
+      ...options
+      // your custom options..
+    };
+  });
+};
+```
+
 ### pipeCssLoaderOptions
 
 `.build.pipeCssLoaderOptions` allow you to modify the options of `css-loader`.
@@ -47,20 +62,32 @@ Some times, we want to modified some loader's options instead of the hold config
 
 `.build.pipeTsLoaderOptions` allow you to modify the options of `ts-loader`.
 
+### pipeTsInclude
+
+`.build.pipeTsInclude` allow you to modify the `include` setting for ts files.
+
 For example:
 
 ```typescript
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  instance.build.pipeTsLoaderOptions((env, options) => {
-    return {
-      ...options
-      // your custom options..
-    };
+  instance.build.pipeTsInclude((env, includePaths) => {
+    return [
+      ...includePaths
+      'some/path/'
+    ];
   });
 };
 ```
+
+### pipeSassInclude
+
+`.build.pipeSassInclude` allow you to modify the `include` setting for scss files.
+
+### pipeLessInclude
+
+`.build.pipeLessInclude` allow you to modify the `include` setting for essfiles.
 
 ## afterProdBuild
 

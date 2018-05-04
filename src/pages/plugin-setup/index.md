@@ -15,10 +15,10 @@ npm install pri
 Then, init the pri plugin:
 
 ```bash
-npx pri plugin-init
+npx pri plugin init
 ```
 
-No `npx`? Run `./node_modules/.bin/pri plugin-init`
+No `npx`? Run `./node_modules/.bin/pri plugin init`
 
 ## Plug-in loading mode
 

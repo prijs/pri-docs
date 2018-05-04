@@ -42,7 +42,7 @@ interface IAnalyseInfo {
 }
 
 export default (instance: typeof pri) => {
-  instance.project.onAnalyseProject((files, env, projectConfig) => {
+  instance.project.onAnalyseProject((files, env, projectConfig, setPipe) => {
     return {
       myCustomPlugin: {
         hasComponents: files.some(file => {
@@ -132,12 +132,12 @@ export class App extends React.PureComponent<any, any> {
 
   public render() {
     return (
-      // ----- pipeAppRenderRouter before
+      // ----- pipeAppRouter before
       <Router>
-        // ----- pipeAppRenderRoutes before
-        // ----- pipeAppRenderRoutes after
+        // ----- pipeAppRoutes before
+        // ----- pipeAppRoutes after
       </Router>
-      // ----- pipeAppRenderRouter after
+      // ----- pipeAppRouter after
     )
   }
 }
