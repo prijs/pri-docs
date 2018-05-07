@@ -89,6 +89,18 @@ export default (instance: typeof pri) => {
 
 `.build.pipeLessInclude` allow you to modify the `include` setting for essfiles.
 
+### pipeTsExclude
+
+`.build.pipeTsExclude` allow you to modify the `exclude` setting for ts files.
+
+### pipeSassExclude
+
+`.build.pipeSassExclude` allow you to modify the `exclude` setting for scss files.
+
+### pipeLessExclude
+
+`.build.pipeLessExclude` allow you to modify the `exclude` setting for essfiles.
+
 ## afterProdBuild
 
 You can assets all the chunk file list or get caches after prod build by using `afterProdBuild`. For example:

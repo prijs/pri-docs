@@ -224,6 +224,18 @@ export default (instance: typeof pri) => {
 };
 ```
 
+## lintFilter
+
+Ignore some file from lint.
+
+```typescript
+import { pri } from 'pri';
+
+export default (instance: typeof pri) => {
+  instance.project.lintFilter(filePath => !filePath.startsWith('/Home'));
+};
+```
+
 ## checkProjectFiles
 
 Check project white file list.
