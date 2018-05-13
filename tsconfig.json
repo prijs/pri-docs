@@ -10,12 +10,19 @@
     "skipLibCheck": true,
     "outDir": "built",
     "rootDir": "./",
+    "baseUrl": ".",
     "lib": [
       "dom",
       "es5",
       "es6",
       "scripthost"
-    ]
+    ],
+    "paths": {
+      "pri/*": [
+        "pri",
+        ".temp/types/*"
+      ]
+    }
   },
   "include": [
     ".temp/**/*",

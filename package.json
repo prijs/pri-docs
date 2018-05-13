@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "pri test",
-    "start": "pri",
+    "start": "pri dev",
     "build": "pri build",
     "preview": "pri preview",
     "deploy": "pri build && gh-pages -d dist",

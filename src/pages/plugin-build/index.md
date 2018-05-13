@@ -117,3 +117,18 @@ export default (instance: typeof pri) => {
 ```
 
 For more about `stats`, please see [webpack docs](https://webpack.js.org/api/stats/#structure).
+
+## pipeDevDllList
+
+You can modify dlls list while running `npm start`:
+
+```typescript
+import { pri } from 'pri';
+
+export default (instance: typeof pri) => {
+  instance.build.pipeDevDllList(list => {
+    list.push('moment');
+    return list;
+  });
+};
+```

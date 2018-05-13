@@ -37,13 +37,13 @@ export class ApplicationAction {
 }
 ```
 
-`pri-plugin-dob` will automatic create `src/utils/helper.tsx` for ts defintion, then you can use it like this:
+`pri-plugin-dob` will automatic create `pri/stores` for ts defintion, then you can use it like this:
 
 **src/pages/index.tsx**
 
 ```typescript
 import * as React from 'react';
-import { stores } from '../utils/helper';
+import { stores } from 'pri/stores';
 
 export default class View extends React.PureComponent<typeof stores, any> {
   render() {

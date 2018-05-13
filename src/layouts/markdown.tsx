@@ -162,6 +162,10 @@ const data: IMenuGroup[] = [
       {
         href: '/pri-plugin-dob/',
         title: 'pri-plugin-dob'
+      },
+      {
+        href: '/pri-plugin-rematch/',
+        title: 'pri-plugin-rematch'
       }
     ]
   },
