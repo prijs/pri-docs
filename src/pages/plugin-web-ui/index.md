@@ -118,3 +118,33 @@ export default {
   }
 };
 ```
+
+### fetch
+
+We can communicatie with the node code in webUI.
+
+Here is an example, first, we register a web socket callback in `src/index.tsx`:
+
+```typescript
+export default async (instance: typeof pri) => {
+  instance.devService.on('someName', async clientData => {
+    // Get data here
+    return 'nice to meet you';
+  });
+};
+```
+
+And we can trigger it, when calling `fetch` in webUI:
+
+```typescript
+import { Connect } from 'dob-react';
+
+@Connect
+class WebuiPage extends React.PureComponent<Props, State> {
+  onClick = () => {
+    const serverData = await this.props.ApplicationAction.fetch('someName', 'hello');
+  };
+}
+```
+
+So, we send `hello` to node from webUI, and the `clientData` is `hello`, and in webUI, the `serverData` is `nice to meet you`

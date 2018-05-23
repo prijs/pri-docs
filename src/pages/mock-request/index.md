@@ -13,6 +13,10 @@ export default {
     return {
       value: Math.random()
     };
+  },
+  '/api/articles': async () => {
+    const res = await fetch('https://www.example.com');
+    return await res.json();
   }
 };
 ```
