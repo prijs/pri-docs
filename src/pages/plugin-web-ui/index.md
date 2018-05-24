@@ -73,6 +73,10 @@ export default {
 };
 ```
 
+### get analyseInfo
+
+we can get analyseInfo from webUI, you can access it in `applicationAction.applicationStore.status.analyseInfo`.
+
 ### event
 
 TODO
@@ -147,4 +151,4 @@ class WebuiPage extends React.PureComponent<Props, State> {
 }
 ```
 
-So, we send `hello` to node from webUI, and the `clientData` is `hello`, and in webUI, the `serverData` is `nice to meet you`
+So, we send `hello` to node from webUI, and the `clientData` equals to `hello`, and in webUI, the `serverData` equals to `nice to meet you`
