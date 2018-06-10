@@ -2,17 +2,7 @@
 
 > You can also create config files by [project dashboard](../features/project-dashboard) easily!
 
-You can create these files to config `pri`:
-
-* `./config/config.default.ts`.
-* `./config/config.local.ts`, enable when exec `npm start`.
-* `./config/config.prod.ts`, enable when exec `npm run build`.
-
-`config.local.ts` and `config.prod.ts` have a higher priority than `config.default.ts`
-
-## Example
-
-**`./config/config.default.ts`**
+You can create `pri.config.ts` in the root of your project directory.
 
 ```typescript
 import { ProjectConfig } from 'pri';
@@ -20,6 +10,18 @@ import { ProjectConfig } from 'pri';
 export default {
   distDir: 'output'
 } as ProjectConfig;
+```
+
+Or use a function:
+
+```typescript
+import { ProjectConfig } from 'pri';
+
+export default isDevelopment => {
+  return {
+    distDir: 'output'
+  } as ProjectConfig;
+};
 ```
 
 ## Config options &lt;type&gt; &lt;defaultValue&gt;
@@ -64,10 +66,10 @@ Dist main file name.
 
 Assets public path. eg: `"https://www.some.com"`, `"https://www.some.com/somePath"`, `"/somePath"`.
 
-* If not set, result: `/<distPath>`.
-* If set /somePath for example, result: `/somePath/<distPath>`.
-* If set some.com for example, result: `https://www.some.com/<distPath>`.
-* If set some.com/somePath for example, result: `https://www.some.com/somePath/<distPath>`.
+- If not set, result: `/<distPath>`.
+- If set /somePath for example, result: `/somePath/<distPath>`.
+- If set some.com for example, result: `https://www.some.com/<distPath>`.
+- If set some.com/somePath for example, result: `https://www.some.com/somePath/<distPath>`.
 
 > Only take effect on `npm run build` | `pri build`.
 

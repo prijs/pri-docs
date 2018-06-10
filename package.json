@@ -2,7 +2,7 @@
   "name": "pri-docs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "test": "pri test",
     "start": "pri dev",

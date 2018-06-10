@@ -2,27 +2,39 @@
 
 Use `.project` to extend project operator.
 
-## getProjectRootPath
+## projectRootPath
 
-Get project root path from `project.getProjectRootPath`:
+Get project root path.
 
 ```typescript
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  const projectRootPath = instance.project.getProjectRootPath();
+  const projectRootPath = instance.projectRootPath;
 };
 ```
 
-## getProjectConfig
+## projectConfig
 
-Get project config by env: `local` or `prod`.
+Get project config in `pri.config.ts`.
 
 ```typescript
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  const projectConfig = instance.project.getProjectConfig('prod');
+  const projectConfig = instance.projectConfig;
+};
+```
+
+## isDevelopment
+
+Judge whether it is a production environment.
+
+```typescript
+import { pri } from 'pri';
+
+export default (instance: typeof pri) => {
+  const isDevelopment = instance.isDevelopment;
 };
 ```
 
@@ -42,11 +54,11 @@ interface IAnalyseInfo {
 }
 
 export default (instance: typeof pri) => {
-  instance.project.onAnalyseProject((files, env, projectConfig, setPipe) => {
+  instance.project.onAnalyseProject((files, setPipe) => {
     return {
       myCustomPlugin: {
         hasComponents: files.some(file => {
-          const relativePath = path.relative(projectRootPath, path.join(file.dir, file.name));
+          const relativePath = path.relative(instance.projectRootPath, path.join(file.dir, file.name));
           return relativePath.startsWith('src/components');
         })
       }
@@ -55,11 +67,10 @@ export default (instance: typeof pri) => {
 };
 ```
 
-| Option        | Description                                                                                                          |
-| ------------- | -------------------------------------------------------------------------------------------------------------------- |
-| files         | All project's files.                                                                                                 |
-| env           | `"local"` when excute `pri dev`. <br/> `"prod"` when excute like `pri build` and `pri preview` other than `pri dev`. |
-| projectConfig | See [Config](../config).                                                                                             |
+| Option  | Description          |
+| ------- | -------------------- |
+| files   | All project's files. |
+| setPipe | Set some text        |
 
 ### Return value
 
@@ -75,7 +86,7 @@ Every time `pri` create entry file. You can get analyse info from first params i
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry, env, projectConfig) => {
+  instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
     // Get analyseInfo from above.
     const hasComponents = analyseInfo.myCustomPlugin.hasComponents;
 
@@ -163,7 +174,7 @@ ReactDOM.render(<Root />, document.getElementById('root'));
 You can also get or set custom code position in plugins. Using `entry.pipe`:
 
 ```typescript
-instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry, env, projectConfig) => {
+instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
   entry.pipeBody(body => {
     return `
     \$\{body\}
@@ -178,7 +189,7 @@ instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry, env, projectCo
 And in other plugins, you can pipe custom position by using `setPipe` inside `onAnalyseProject`:
 
 ```typescript
-instance.project.onAnalyseProject((files, env, projectConfig, setPipe) => {
+instance.project.onAnalyseProject((files, setPipe) => {
   setPipe('my-custom-position', text => {
     return `
     \$\{text\}
@@ -202,7 +213,7 @@ Pri uses a white list for project file management. You can use `whiteFileRules.a
 ```typescript
 export default (instance: typeof pri) => {
   instance.project.whiteFileRules.add(file => {
-    const relativePath = path.relative(projectRootPath, file.dir)
+    const relativePath = path.relative(instance.projectRootPath, file.dir)
     return relativePath === "src/pages" && file.name === "404" && file.ext === ".tsx"
   })
 })
@@ -246,8 +257,7 @@ Check project white file list.
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  const projectConfig = instance.project.getProjectConfig('prod');
-  await instance.project.checkProjectFiles(projectConfig);
+  await instance.project.checkProjectFiles();
 };
 ```
 
@@ -261,8 +271,7 @@ This method will called when excute `pri init`, `pri`, `pri build`.
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  const projectConfig = instance.project.getProjectConfig('prod');
-  await instance.project.ensureProjectFiles(projectConfig);
+  await instance.project.ensureProjectFiles();
 };
 ```
 

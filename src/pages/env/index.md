@@ -24,7 +24,7 @@ When execute `npm start`, `env.isLocal === true`, when execute `npm run build` o
 You can also set your own custom env variable in config files, and get them by using `env.get()`.
 
 ```typescript
-// ./src/config/config.default.ts
+// ./pri.config.ts
 import { ProjectConfig } from 'pri/client';
 
 export default {
@@ -34,5 +34,5 @@ export default {
 } as ProjectConfig;
 ```
 
-* After running `npm start`, `env.get()` will get from the map merged by `config.local.ts` and `config.default.ts`
-* After running `npm run build`, `env.get()` will get from the map merged by `config.prod.ts` and `config.default.ts`
+- After running `npm start`, `env.get()` will get from the map merged by `config.local.ts` and `config.default.ts`
+- After running `npm run build`, `env.get()` will get from the map merged by `config.prod.ts` and `config.default.ts`

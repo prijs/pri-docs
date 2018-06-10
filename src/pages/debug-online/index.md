@@ -10,7 +10,7 @@ For example, `http://example.com` serve following html:
 
 We should use **`publicPath`** + **`outFileName`** to fit this path.
 
-So, you can set **`./config/config.default.ts`** to:
+So, you can set **`./pri.config.ts`** to:
 
 ```typescript
 import { ProjectConfig } from 'pri';

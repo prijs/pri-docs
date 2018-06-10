@@ -11,7 +11,7 @@ For example, here is a fixed template response:
 
 and when publish, if files in `build` will upload to `https://cdn.demo.com/app` path, we should use **`distDir`** + **`outFileName`** to fit this path.
 
-You can set **`./config/config.prod.ts`**:
+You can set **`./pri.config.ts`**:
 
 ```typescript
 import { ProjectConfig } from 'pri';
