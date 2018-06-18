@@ -181,6 +181,19 @@ const data: {
         {
           href: '',
           title: 'Guide'
+        },
+        {
+          href: 'write-docs/',
+          title: 'Write docs'
+        }
+      ]
+    },
+    {
+      title: 'Deploy',
+      childs: [
+        {
+          href: 'deploy-to-npm/',
+          title: 'Deploy to npm'
         }
       ]
     }

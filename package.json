@@ -9,7 +9,9 @@
     "build": "pri build",
     "preview": "pri preview",
     "deploy": "pri build && gh-pages -d dist",
-    "analyse": "pri analyse"
+    "analyse": "pri analyse",
+    "docs": "pri docs",
+    "format": "tslint --fix './src/**/*.?(ts|tsx)' && prettier --write './src/**/*.?(ts|tsx)'"
   },
   "repository": {
     "type": "git",

@@ -19,16 +19,16 @@ npx pri init
 No `npx`? Run `./node_modules/.bin/pri init`.
 
 ```bash
-Success init your project, you can run serval commands:
+Success init your component, you can run serval commands:
 
-npm start
-  Starts the development server.
+npm run docs
+  Run docs.
 
 npm run build
   Bundles the app into static files for production.
 
-npm run preview
-  Starts the development server.
+npm publish
+  Publish this component to npm package.
 
 Happy hacking!
 ```
