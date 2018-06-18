@@ -1,6 +1,6 @@
 # Write docs
 
-If you create some-name.tsx files in the docs folder, you can see these documents through `npm run docs`.
+If you create `some-name.tsx` files in the `docs` folder, you can see these documents through `npm run docs`.
 
 For example, we create `./docs/basic.tsx`:
 
@@ -22,8 +22,8 @@ export default class Page extends React.PureComponent<Props, State> {
 }
 ```
 
-And when run `npm run docs`, it likes this:
+And when run `npm run docs`, it looks like this:
 
 ![image](https://user-images.githubusercontent.com/7970947/41517073-fac494f0-72ea-11e8-802b-1cc8febb364e.png)
 
-The document menu is on the left side, the instance of the current document is on the right side, and the bottom is the code of the current document.
+The document menu is on the left side, the instance of the current doc is on the right side, and the bottom is the code of the current doc.
