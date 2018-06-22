@@ -5,7 +5,7 @@
 You can create `pri.config.ts` in the root of your project directory.
 
 ```typescript
-import { ProjectConfig } from 'pri';
+import { ProjectConfig } from 'pri/client';
 
 export default {
   distDir: 'output'
@@ -15,7 +15,7 @@ export default {
 Or use a function:
 
 ```typescript
-import { ProjectConfig } from 'pri';
+import { ProjectConfig } from 'pri/client';
 
 export default isDevelopment => {
   return {

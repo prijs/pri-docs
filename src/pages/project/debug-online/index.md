@@ -13,7 +13,7 @@ We should use **`publicPath`** + **`outFileName`** to fit this path.
 So, you can set **`./pri.config.ts`** to:
 
 ```typescript
-import { ProjectConfig } from 'pri';
+import { ProjectConfig } from 'pri/client';
 
 export default {
   useHttps: false,

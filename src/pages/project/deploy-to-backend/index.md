@@ -14,7 +14,7 @@ and when publish, if files in `build` will upload to `https://cdn.demo.com/app` 
 You can set **`./pri.config.ts`**:
 
 ```typescript
-import { ProjectConfig } from 'pri';
+import { ProjectConfig } from 'pri/client';
 
 export default {
   distDir: 'build/static',
