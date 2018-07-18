@@ -48,6 +48,10 @@ Output main file name.
 
 Output main css file name.
 
+### bundleFileName `string` `"bundle.js"`
+
+Rewrite Bundle file name when execute `npm run bundle`.
+
 ### devUrl `string` `null`
 
 Specify the development url, work both for `npm start` and `npm run preview`.
@@ -88,7 +92,7 @@ Only take effect on `npm run build` | `pri build`
 Custom env. For example:
 
 ```typescript
-// ./config/config.default.ts
+// pri.config.ts
 export default {
   customEnv: {
     user: 'ascoders'
@@ -121,3 +125,25 @@ _Experiment._
 Wether enable client server render by service worker.
 
 > Warning: depend on service worker, should set useServiceWorker=true first.
+
+### routes `IRoute[]` `[]`
+
+Custom routes. When this configuration exists, it will not parse the `pages` directory.
+
+For example:
+
+```typescript
+// pri.config.ts
+export default {
+  routes: [
+    {
+      path: '/',
+      component: 'src/pages/home' // direct to ./src/pages/home.tsx or ./src/pages/home/index.tsx
+    },
+    {
+      path: '/user/:id',
+      component: 'src/page/user-info' // direct to ./src/pages/user-info.tsx or ./src/pages/user-info/index.tsx
+    }
+  ]
+} as ProjectConfig;
+```
