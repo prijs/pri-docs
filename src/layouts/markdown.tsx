@@ -4,9 +4,11 @@ import * as ReactDOM from 'react-dom';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import Nav from '../components/nav';
 
+// tslint:disable-next-line:no-var-requires
 const Scroll = require('react-custom-scrollbars').default;
 
-const docSearch = require('docsearch.js');
+// tslint:disable-next-line:no-var-requires
+import docSearch = require('docsearch.js');
 import 'docsearch.js/dist/cdn/docsearch.min.css';
 
 import './markdown.css';
