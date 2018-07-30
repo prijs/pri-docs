@@ -8,7 +8,7 @@ import Nav from '../components/nav';
 const Scroll = require('react-custom-scrollbars').default;
 
 // tslint:disable-next-line:no-var-requires
-import docSearch = require('docsearch.js');
+const docSearch = require('docsearch.js');
 import 'docsearch.js/dist/cdn/docsearch.min.css';
 
 import './markdown.css';
