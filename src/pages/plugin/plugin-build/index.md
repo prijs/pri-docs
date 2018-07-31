@@ -10,7 +10,7 @@ Change webpack config by using `pipeConfig`:
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  instance.build.pipeConfig((env, config) => {
+  instance.build.pipeConfig(config => {
     return {
       ...config
       // your custom options..
@@ -33,7 +33,7 @@ For example:
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  instance.build.pipeStyleLoaderOptions((env, options) => {
+  instance.build.pipeStyleLoaderOptions(options => {
     return {
       ...options
       // your custom options..
@@ -72,7 +72,7 @@ For example:
 import { pri } from 'pri';
 
 export default (instance: typeof pri) => {
-  instance.build.pipeTsInclude((env, includePaths) => {
+  instance.build.pipeTsInclude(includePaths => {
     return [
       ...includePaths
       'some/path/'
