@@ -88,6 +88,10 @@ const data: {
           title: 'Env'
         },
         {
+          href: 'history/',
+          title: 'History'
+        },
+        {
           href: 'mock-request/',
           title: 'Mock request'
         },
