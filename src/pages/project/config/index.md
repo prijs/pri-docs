@@ -147,3 +147,7 @@ export default {
   ]
 } as ProjectConfig;
 ```
+
+# useHashRouter `boolean` `false`
+
+Wether enable hash router.
