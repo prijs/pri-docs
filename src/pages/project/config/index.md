@@ -148,6 +148,10 @@ export default {
 } as ProjectConfig;
 ```
 
-# useHashRouter `boolean` `false`
+### useHashRouter `boolean` `false`
 
 Wether enable hash router.
+
+### sourceRoot `string` `./`
+
+Specify source file root path, for example `sourceRoot='app/client'`, will lead to `app/client/src` and `app/client/tests`.
