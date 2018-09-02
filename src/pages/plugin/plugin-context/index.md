@@ -6,7 +6,7 @@ For example, `pri-plugin-login` get user info, and `pri-plugin-track` want to ge
 
 ## pipe
 
-**`pri-plugin-login/src/index.ts`**
+**`pri-plugin-login/src/index.tsx`**
 
 ```typescript
 import { pri } from "pri"
@@ -23,7 +23,7 @@ export default (instance: typeof pri) => {
 
 ## get
 
-**`pri-plugin-track/src/index.ts`**
+**`pri-plugin-track/src/index.tsx`**
 
 ```typescript
 import { pri } from "pri"

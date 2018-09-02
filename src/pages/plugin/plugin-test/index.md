@@ -33,7 +33,7 @@ test("Multiple files", t => {
 
 And we can safely use this `judgeHasComponents` function:
 
-**`src/index.ts`**
+**`./src/index.tsx`**
 
 ```typescript
 instance.project.onAnalyseProject(files => {

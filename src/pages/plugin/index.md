@@ -12,20 +12,20 @@ npm init
 npm install pri
 ```
 
-Then, init the pri plugin:
+Then, init the project, and choose type: `Pri plugin`.
 
 ```bash
-npx pri plugin init
+npx pri init
 ```
 
-No `npx`? Run `./node_modules/.bin/pri plugin init`
+No `npx`? Run `./node_modules/.bin/pri init`
 
 ## Plug-in loading mode
 
 All the pri-plugin should be named like `pri-plugin-*` or `@ali/pri-plugin-*`, for example:
 
-* `pri-plugin-test`
-* `pri-plugin-command-deploy`
+- `pri-plugin-test`
+- `pri-plugin-command-deploy`
 
 And when you installed `pri`, `pri-plugin-test` at the same time in your project , the plug-in will be automatically loaded when any `pri` scripts are executed.
 

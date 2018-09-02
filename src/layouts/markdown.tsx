@@ -1,4 +1,3 @@
-import { env } from 'pri/client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';

@@ -42,7 +42,7 @@ export default (instance: typeof pri) => {
 
 Every time `pri` scan project files.
 
-**`./src/index.ts`**
+**`./src/index.tsx`**
 
 ```typescript
 import { pri } from 'pri';
@@ -80,7 +80,7 @@ The return value from `onAnalyseProject` callback will merge into project analys
 
 Every time `pri` create entry file. You can get analyse info from first params in first callback function.
 
-**`./src/index.ts`**
+**`./src/index.tsx`**
 
 ```typescript
 import { pri } from 'pri';

@@ -6,7 +6,7 @@ Use `.commands` to extend the commander.
 
 Register new command by using `registerCommand` method.
 
-**`./src/index.ts`**
+**`./src/index.tsx`**
 
 ```typescript
 import { pri } from 'pri';
@@ -35,7 +35,7 @@ Then you can use `pri deploy`.
 
 Expand commander which already exist.
 
-**`./src/index.ts`**
+**`./src/index.tsx`**
 
 ```typescript
 import { pri } from "pri"

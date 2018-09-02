@@ -155,3 +155,7 @@ Wether enable hash router.
 ### sourceRoot `string` `./`
 
 Specify source file root path, for example `sourceRoot='app/client'`, will lead to `app/client/src` and `app/client/tests`.
+
+### unexpectedFileCheck `boolean` `true`
+
+Suggestion to open!
