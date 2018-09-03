@@ -8,8 +8,7 @@ First, create an empty folder:
 
 ```shell
 mkdir test; cd test
-npm init
-npm install pri
+npm i pri
 ```
 
 Then, init the project, and choose type: `Project`.

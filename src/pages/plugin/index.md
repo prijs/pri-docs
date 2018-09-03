@@ -8,8 +8,7 @@ First, create an empty folder:
 
 ```bash
 mkdir test; cd test
-npm init
-npm install pri
+npm i pri
 ```
 
 Then, init the project, and choose type: `Pri plugin`.
