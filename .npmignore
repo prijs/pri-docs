@@ -6,4 +6,7 @@
 /coverage
 /.nyc_output
 /npm-debug.log
+/package-lock.json
 /tests
+/.idea
+/packages

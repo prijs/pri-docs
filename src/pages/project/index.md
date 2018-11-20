@@ -46,4 +46,4 @@ Happy hacking!
 - [babel@7.0.0](https://www.npmjs.com/package/babel-core)
 - [typescript@2.8.1](https://github.com/Microsoft/TypeScript)
 - [gulp@3.9.1](https://github.com/gulpjs/gulp)
-- [ava@1.0.0](https://github.com/avajs/ava)
+- [jest@23.5.0](https://github.com/facebook/jest)

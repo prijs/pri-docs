@@ -34,7 +34,7 @@ const data: {
 } = {
   project: [
     {
-      title: 'Getting started',
+      title: 'Project starter',
       childs: [
         {
           href: '',
@@ -140,12 +140,12 @@ const data: {
           title: 'Auto pick shared modules'
         },
         {
-          href: 'automatic-hmr/',
-          title: 'Automatic HMR'
+          href: 'auto-hmr/',
+          title: 'Auto HMR'
         },
         {
-          href: 'automatic-code-splitting/',
-          title: 'Automatic code splitting'
+          href: 'auto-code-splitting/',
+          title: 'Auto code splitting'
         },
         {
           href: 'tree-shaking/',
@@ -162,6 +162,10 @@ const data: {
         {
           href: 'auto-prefetch/',
           title: 'Auto prefetch'
+        },
+        {
+          href: 'quick-import/',
+          title: 'Quick Import'
         }
       ]
     },
@@ -181,7 +185,7 @@ const data: {
   ],
   component: [
     {
-      title: 'Getting Started',
+      title: 'Component starter',
       childs: [
         {
           href: '',
@@ -335,10 +339,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
           ) : (
             <div className="menu-group-title">{group.title}</div>
           )}
-          {group.childs &&
-            group.childs.length > 0 && (
-              <div className="menu-group-child-container">{this.renderMenuChilds(group.childs)}</div>
-            )}
+          {group.childs && group.childs.length > 0 && (
+            <div className="menu-group-child-container">{this.renderMenuChilds(group.childs)}</div>
+          )}
         </div>
       );
     });
