@@ -30,7 +30,10 @@ self.addEventListener('fetch', event => {
     var responseInit = {
       status: 200,
       statusText: 'OK',
-      headers: { 'Content-Type': 'application/json' }
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
     };
 
     if (typeof mockInfo.value === 'function') {
@@ -51,7 +54,7 @@ self.addEventListener('fetch', event => {
 });
 
 var SSR_BUNDLE_PREFIX = '__ssr_bundle__';
-var SSR_BUNDLE_VERSION = SSR_BUNDLE_PREFIX + 'f826';
+var SSR_BUNDLE_VERSION = SSR_BUNDLE_PREFIX + 'cf7e';
 
 var currentCacheSsrRequest = null;
 var currentCacheSsrOriginHtml = null;
