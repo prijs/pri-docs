@@ -99,6 +99,10 @@ const data: {
           title: '404 Page'
         },
         {
+          href: 'assets/',
+          title: 'Assets'
+        },
+        {
           href: 'webui/',
           title: 'WebUI'
         },
