@@ -170,6 +170,10 @@ const data: {
         {
           href: 'quick-import/',
           title: 'Quick Import'
+        },
+        {
+          href: 'web-worker/',
+          title: 'Web Worker'
         }
       ]
     },

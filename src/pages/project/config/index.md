@@ -159,3 +159,7 @@ Specify source file root path, for example `sourceRoot='app/client'`, will lead 
 ### unexpectedFileCheck `boolean` `true`
 
 Suggestion to open!
+
+### packageLock `boolean` `false`
+
+Enable package lock. If you don't want to auto upgrade packages by semver agreement, set `packageLock` to `true`.
