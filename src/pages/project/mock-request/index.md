@@ -21,4 +21,4 @@ export default {
 };
 ```
 
-It's easy to use!
+That's all!
