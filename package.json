@@ -27,7 +27,7 @@
   "dependencies": {
     "docsearch.js": "^2.5.2",
     "react-custom-scrollbars": "^4.2.1",
-    "pri": "1.0.0-beta50"
+    "pri": "^1.0.0"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0"

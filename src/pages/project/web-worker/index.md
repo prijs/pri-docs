@@ -13,7 +13,7 @@ ctx.addEventListener('message', event => console.log(event));
 
 ```tsx
 // app.tsx
-import TestWorker from './test.worker';
+import * as TestWorker from './test.worker';
 
 const worker: Worker = new TestWorker();
 
