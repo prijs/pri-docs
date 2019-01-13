@@ -32,9 +32,9 @@ interface IMenuItem {
 const data: {
   [x: string]: IMenuGroup[];
 } = {
-  project: [
+  usage: [
     {
-      title: 'Project starter',
+      title: 'Starter',
       childs: [
         {
           href: '',
@@ -57,6 +57,10 @@ const data: {
           title: 'Markdown page'
         },
         {
+          href: 'write-docs/',
+          title: 'Docs'
+        },
+        {
           href: 'styles/',
           title: 'Styles'
         },
@@ -76,6 +80,10 @@ const data: {
         {
           href: 'deploy-to-backend/',
           title: 'Deploy to backend'
+        },
+        {
+          href: 'deploy-to-npm/',
+          title: 'Deploy to npm'
         }
       ]
     },
@@ -187,30 +195,6 @@ const data: {
         {
           href: 'pri-plugin-rematch/',
           title: 'pri-plugin-rematch'
-        }
-      ]
-    }
-  ],
-  component: [
-    {
-      title: 'Component starter',
-      childs: [
-        {
-          href: '',
-          title: 'Guide'
-        },
-        {
-          href: 'write-docs/',
-          title: 'Write docs'
-        }
-      ]
-    },
-    {
-      title: 'Deploy',
-      childs: [
-        {
-          href: 'deploy-to-npm/',
-          title: 'Deploy to npm'
         }
       ]
     }

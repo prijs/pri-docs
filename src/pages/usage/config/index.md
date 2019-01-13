@@ -40,13 +40,17 @@ localhost port when execute `npm start`. pri will find a free port by default, a
 }
 ```
 
-### outFileName `string` `"main.[hash].js"`
+### outFileName `string` `"index.js"`
 
 Output main file name.
 
-### outCssFileName `string` `"main.[hash].css"`
+### outCssFileName `string` `"index.css"`
 
 Output main css file name.
+
+### cssExtract `boolean` `false`
+
+Extract css code? If set to `true`, when run `npm run build`, will generate a `css` file named `outCssFileName`.
 
 ### bundleFileName `string` `"bundle.js"`
 
@@ -167,3 +171,7 @@ Enable package lock. If you don't want to auto upgrade packages by semver agreem
 ### hideSourceCodeForNpm `boolean` `false`
 
 Hide source code when publish npm package. Only take effect on `projectType = component`.
+
+### watchNodeModules `boolean` `false`
+
+Wether watch `node_modules`. If set to `true`, will slightly affect performance.
