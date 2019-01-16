@@ -26,6 +26,25 @@ Already support.
 
 ## Usage
 
+You can import `css` files into JSX file.
+
+```css
+.button {
+  color: red;
+}
+```
+
+```tsx
+import * as React from 'react';
+import './index.css';
+
+export default () => <button className="button" />;
+```
+
+## Css Modules Usage
+
+If set `enableCssModules: true`, will enable [CSS Modules](https://github.com/css-modules/css-modules).
+
 For example, we have 3 files named `src/index.tsx`、`src/input.css`、`src/button.scss`, the two style files:
 
 **src/input.css:**
