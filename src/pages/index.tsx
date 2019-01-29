@@ -9,7 +9,7 @@ export default class Home extends React.PureComponent<any, any> {
         <div className="home-logo-container">
           <div className="home-logo">Pri</div>
           <div className="home-logo-desc">Framework for React applications and components.</div>
-          <Link className="home-logo-button" to="/project/">
+          <Link className="home-logo-button" to="/usage/">
             Getting Start
           </Link>
         </div>
