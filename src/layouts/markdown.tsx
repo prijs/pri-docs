@@ -228,6 +228,10 @@ const data: {
           title: 'Service worker'
         },
         {
+          href: 'plugin-cli/',
+          title: 'Cli'
+        },
+        {
           href: 'plugin-web-ui/',
           title: 'WebUI'
         },
