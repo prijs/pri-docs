@@ -5,20 +5,18 @@ If the HTML page is controlled by the backend, you need to adjust the output nam
 For example, here is a fixed template response:
 
 ```html
-<link href="https://cdn.demo.com/app/static/bundle.css">
+<link href="https://cdn.demo.com/app/static/bundle.css" />
 <script src="https://cdn.demo.com/app/static/bundle.js"></script>
 ```
 
 and when publish, if files in `build` will upload to `https://cdn.demo.com/app` path, we should use **`distDir`** + **`outFileName`** to fit this path.
 
-You can set **`./pri.config.ts`**:
+You can set **`./priconfig.json`**:
 
-```typescript
-import { ProjectConfig } from 'pri/client';
-
-export default {
-  distDir: 'build/static',
-  outFileName: 'bundle.js',
-  outCssFileName: 'bundle.css'
-} as ProjectConfig;
+```json
+{
+  "distDir": "build/static",
+  "outFileName": "bundle.js",
+  "outCssFileName": "bundle.css"
+}
 ```

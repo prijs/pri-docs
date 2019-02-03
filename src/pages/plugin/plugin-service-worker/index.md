@@ -9,18 +9,16 @@ You can use `.serviceWorker` to extend code in service worker.
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.project.onAnalyseProject(() => {
-    instance.serviceWorker.pipe(
-      text => `
-      \${text}
-      self.addEventListener("fetch", event => {
-        // some code here..
-      })
-      `
-    );
-  });
-};
+pri.project.onAnalyseProject(() => {
+  pri.serviceWorker.pipe(
+    text => `
+    \${text}
+    self.addEventListener("fetch", event => {
+      // some code here..
+    })
+    `
+  );
+});
 ```
 
 ## pipeAfterProdBuild
@@ -30,14 +28,12 @@ export default (instance: typeof pri) => {
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.build.afterProdBuild(stats => {
-    instance.serviceWorker.pipeAfterProdBuild(
-      text => `
-      \${text}
-      // use stats.assetsByChunkName do something..
-    `
-    );
-  });
-};
+pri.build.afterProdBuild(stats => {
+  pri.serviceWorker.pipeAfterProdBuild(
+    text => `
+    \${text}
+    // use stats.assetsByChunkName do something..
+  `
+  );
+});
 ```

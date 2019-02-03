@@ -2,9 +2,27 @@
 
 We use [css-modules](https://github.com/css-modules/css-modules) to write styles.
 
+```
+.
+├── src
+│   └── pages
+│         ├── index.tsx
+│         └── index.css         # Style file
+└── priconfig.json
+```
+
 > If you use `css-in-js` such as [styled-components](https://github.com/styled-components/styled-components), you can skip this introduction.
 
 ## sass
+
+```
+.
+├── src
+│   └── pages
+│         ├── index.tsx
+│         └── index.scss         # Scss file
+└── priconfig.json
+```
 
 To use sass, you should install `node-sass` `sass-loader`:
 
@@ -13,6 +31,15 @@ npm i node-sass sass-loader --save
 ```
 
 ## less
+
+```
+.
+├── src
+│   └── pages
+│         ├── index.tsx
+│         └── index.less         # Less file
+└── priconfig.json
+```
 
 To use less, you should install `less-loader`:
 

@@ -2,6 +2,14 @@
 
 > You can also create layout by [project dashboard](features/project-dashboard) easily!
 
+```
+.
+├── src
+│   └── layouts
+│         └── index.tsx         # Layout
+└── priconfig.json
+```
+
 Populate `./src/layouts/index.tsx` inside your project:
 
 ```tsx

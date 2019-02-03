@@ -9,14 +9,12 @@ Change webpack config by using `pipeConfig`:
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.build.pipeConfig(config => {
-    return {
-      ...config
-      // your custom options..
-    };
-  });
-};
+pri.build.pipeConfig(config => {
+  return {
+    ...config
+    // your custom options..
+  };
+});
 ```
 
 ## Other configuration modification
@@ -32,14 +30,12 @@ For example:
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.build.pipeStyleLoaderOptions(options => {
-    return {
-      ...options
-      // your custom options..
-    };
-  });
-};
+pri.build.pipeStyleLoaderOptions(options => {
+  return {
+    ...options
+    // your custom options..
+  };
+});
 ```
 
 ### pipeCssLoaderOptions
@@ -71,14 +67,12 @@ For example:
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.build.pipeTsInclude(includePaths => {
-    return [
-      ...includePaths
-      'some/path/'
-    ];
-  });
-};
+pri.build.pipeTsInclude(includePaths => {
+  return [
+    ...includePaths
+    'some/path/'
+  ];
+});
 ```
 
 ### pipeSassInclude
@@ -108,12 +102,10 @@ You can assets all the chunk file list or get caches after prod build by using `
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.build.afterProdBuild(stats => {
-    console.log(stats.hash); // Get hash name.
-    console.log(stats.assetsByChunkName); // Get thunks list.
-  });
-};
+pri.build.afterProdBuild(stats => {
+  console.log(stats.hash); // Get hash name.
+  console.log(stats.assetsByChunkName); // Get thunks list.
+});
 ```
 
 For more about `stats`, please see [webpack docs](https://webpack.js.org/api/stats/#structure).
@@ -125,10 +117,8 @@ You can modify dlls list while running `npm start`:
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.build.pipeDevDllList(list => {
-    list.push('moment');
-    return list;
-  });
-};
+pri.build.pipeDevDllList(list => {
+  list.push('moment');
+  return list;
+});
 ```

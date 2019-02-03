@@ -10,10 +10,19 @@ We provide a pri-plugin for [dob](https://github.com/dobjs/dob)!
 npm i pri-plugin-dob
 ```
 
+```
+.
+├── src
+│    └── stores
+│          ├── application.ts      # store file
+│          └── user.ts             # store file
+└── priconfig.json
+```
+
 ## Features
 
-* Extend webui for store operates.
-* Allow files in path `src/stores/**`, and automatic binding stores into entry.
+- Extend webui for store operates.
+- Allow files in path `src/stores/**`, and automatic binding stores into entry.
 
 Let's try it! For example, create a store named `application`:
 

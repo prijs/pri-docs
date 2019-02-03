@@ -6,39 +6,34 @@ For example, `pri-plugin-login` get user info, and `pri-plugin-track` want to ge
 
 ## pipe
 
-**`pri-plugin-login/src/index.tsx`**
+**`pri-plugin-login/src/plugin/index.ts`**
 
 ```typescript
 import { pri } from "pri"
 
-export default (instance: typeof pri) => {
-  const currentUser = getCurrentUser() // You can also cache user information in some files.
+const currentUser = getCurrentUser() // You can also cache user information in some files.
 
-  instance.context.pipe(context => {
-    ...context,
-    currentUser
-  })
-}
+pri.context.pipe(context => {
+  ...context,
+  currentUser
+})
 ```
 
 ## get
 
-**`pri-plugin-track/src/index.tsx`**
+**`pri-plugin-track/src/plugin/index.ts`**
 
 ```typescript
-import { pri } from "pri"
+import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.context.get().currentUser
-}
+pri.context.get().currentUser;
 ```
 
-Don't forget to set dependence in `pri-plugin-track/package.json`:
+Don't forget to set dependence in `pri-plugin-track/src/index.ts`:
 
-```json
-"pri": {
-  "dependencies": [
-    "pri-plugin-login"
-  ]
-}
+```typescript
+export const config = () => ({
+  name: 'pri-plugin-track',
+  dependencies: ['pri-plugin-login']
+});
 ```

@@ -2,14 +2,22 @@
 
 Execute `npm test` in your project, and you will get a code coverage reporter!
 
+```
+.
+├── src
+├── tests             # Test files here
+│   ├── ui.tsx
+│   └── function.ts
+└── priconfig.json
+```
+
 ## Write test
 
-We use [ava](https://github.com/avajs/ava) test runner. Create any file in `./tests`:
+We use [jest](https://github.com/facebook/jest) test runner. Create any file in `./tests`:
 
 **`./tests/project.ts`**
 
 ```typescript
-import test from 'ava';
 import { shallow } from 'enzyme';
 
 const Foo = ({ children }) => (
@@ -20,10 +28,8 @@ const Foo = ({ children }) => (
   </div>
 );
 
-test('has a .Foo class name', t => {
+test('has a .Foo class name', () => {
   const wrapper = shallow(<Foo />);
-  t.true(wrapper.hasClass('Foo'));
+  expect(wrapper.hasClass('Foo')).toBe(true);
 });
 ```
-
-See more in [test react in ava](https://github.com/avajs/ava/blob/master/docs/recipes/react.md).

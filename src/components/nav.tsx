@@ -18,7 +18,7 @@ export default class Nav extends React.PureComponent<any, any> {
               Usage
             </Link>
             <Link to="/plugin/" className={`header-item ${category === 'plugin' ? 'active' : ''}`}>
-              Plugin Docs
+              Plugin
             </Link>
             <a href="https://github.com/ascoders/pri" target="_blank" className="header-item">
               View on Github

@@ -4,46 +4,58 @@ Pri is a toolkit for building `web applications` or `component` with React. **He
 
 ## Install
 
-First, create an empty folder:
+First, create an empty folder, and `npm i pri`:
 
 ```shell
-mkdir test; cd test
-npm i pri
+mkdir test;
+cd test;
+npm i pri --save;
 ```
 
-Then, init the project, and choose type: `Project`.
+Then, run `npx pri init`, and choose type: `Project` or `Component`.
 
 ```shell
 npx pri init
+
+# choose type: Pri Plugin
+? Choose project type (Use arrow keys)
+❯ Project
+  Component
+  Pri Plugin
+  Cli
 ```
 
-No `npx`? Run `./node_modules/.bin/pri init`.
+> No `npx`? Run `./node_modules/.bin/pri init`.
 
-```bash
-Success init your project, you can run serval commands:
+## Project
 
-npm start
-  Starts the development server.
+Now you choose `Project`, you will create a web application.
 
-npm run build
-  Bundles the app into static files for production.
+Then, run `npm start` to run this web application locally, and `npm run build` to create a bundle.
 
-npm run preview
-  Starts the development server.
+**Deploy:**
 
-Happy hacking!
-```
+See deploy on the left menu. Or you can regist a command `npm run publish` by create a new pri-plugin.
 
-## Built-in packages in 0.x version
+## Component
 
-- [react@16.3.1](https://www.npmjs.com/package/react)
-- [react-dom@16.3.1](https://www.npmjs.com/package/react-dom)
-- [react-router-dom@4.2.2](https://www.npmjs.com/package/react-router-dom)
-- [antd@3.4.1](https://www.npmjs.com/package/antd)
-- [lodash@4.17.4](https://www.npmjs.com/package/lodash)
-- [react-loadable@5.3.1](https://www.npmjs.com/package/react-loadable)
-- [webpack@4.5.0](https://www.npmjs.com/package/parcel-bundler)
-- [babel@7.0.0](https://www.npmjs.com/package/babel-core)
-- [typescript@2.8.1](https://github.com/Microsoft/TypeScript)
-- [gulp@3.9.1](https://github.com/gulpjs/gulp)
-- [jest@23.5.0](https://github.com/facebook/jest)
+Now you choose `Component`, you will create a npm packages for any usage. Eg: an UI component, a Nodejs utils or a simple typescript definition package.
+
+Then, run `npm run docs` to debug your component, and `npm run build` to transfer your code from Typescript to ES3(not bundled).
+
+**Deploy:**
+
+Run `npm publish` to deploy your component.
+
+## Built-in packages in 2.x version
+
+- [react@16.7.0](https://www.npmjs.com/package/react)
+- [react-dom@16.7.0](https://www.npmjs.com/package/react-dom)
+- [react-router-dom@4.3.1](https://www.npmjs.com/package/react-router-dom)
+- [antd@3.13.0](https://www.npmjs.com/package/antd)
+- [lodash@4.17.11](https://www.npmjs.com/package/lodash)
+- [react-loadable@5.5.0](https://www.npmjs.com/package/react-loadable)
+- [webpack@4.25.1](https://www.npmjs.com/package/parcel-bundler)
+- [babel@7.2.2](https://www.npmjs.com/package/babel-core)
+- [typescript@3.2.2](https://github.com/Microsoft/TypeScript)
+- [jest@23.6.0](https://github.com/facebook/jest)

@@ -2,6 +2,16 @@
 
 If you create `some-name.tsx` files in the `docs` folder, you can see these documents through `npm run docs`.
 
+```
+.
+│── docs              # Used when `npm run docs`
+│   └── basic.tsx
+├── src
+│   ├── index
+│   └── utils
+└── priconfig.json
+```
+
 For example, we create `./docs/basic.tsx`:
 
 ```tsx

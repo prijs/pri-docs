@@ -23,15 +23,13 @@ When execute `npm start`, `env.isLocal === true`, when execute `npm run build` o
 
 You can also set your own custom env variable in config files, and get them by using `env.get()`.
 
-```typescript
-// ./pri.config.ts
-import { ProjectConfig } from 'pri/client';
-
-export default {
-  env: {
-    theme: 'One Dark'
+```json
+// ./priconfig.json
+{
+  "env": {
+    "theme": "One Dark"
   }
-} as ProjectConfig;
+}
 ```
 
 - After running `npm start`, `env.get()` will get from the map merged by `config.local.ts` and `config.default.ts`

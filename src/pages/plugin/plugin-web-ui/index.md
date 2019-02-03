@@ -1,19 +1,20 @@
 # Web UI
 
-You can extend web ui in your plugin.
+You can extend web ui in your plugin. Pri load web ui plugin by implement `getUIPlugins` function in `./src/index.ts`.
 
-First, set your `web-entry` path in plugin's `package.json`:
-
-```json
-{
-  "pri": {
-    "type": "plugin",
-    "web-entry": "./built/src/web/index.js"
-  }
-}
+```
+.
+├── src
+│   ├── plugin
+│   ├── web-ui-one
+│   │       └── index.tsx    # WebUI plugin
+│   ├── web-ui-two
+│   │       └── index.tsx    # WebUI plugin
+│   └── index.ts
+└── priconfig.json
 ```
 
-Then, create file `./src/web/index.tsx`:
+First, create some webui code into `src` folder. For example, create file `./src/plugin/web-ui-one/index.tsx`:
 
 ```tsx
 import * as React from 'react';
@@ -32,6 +33,12 @@ export default {
 ```
 
 Then, you plugin will be loaded into the hole of `menu`.
+
+Finally, import to in `./src/index.ts`:
+
+```ts
+export const getUIPlugins = () => [import('./web-ui-one'), import('./web-ui-two')];
+```
 
 ## Debug webui
 
@@ -130,12 +137,10 @@ We can communicatie with the node code in webUI.
 Here is an example, first, we register a web socket callback in `src/index.tsx`:
 
 ```typescript
-export default async (instance: typeof pri) => {
-  instance.devService.on('someName', async clientData => {
-    // Get data here
-    return 'nice to meet you';
-  });
-};
+pri.devService.on('someName', async clientData => {
+  // Get data here
+  return 'nice to meet you';
+});
 ```
 
 And we can trigger it, when calling `fetch` in webUI:

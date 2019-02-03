@@ -25,14 +25,15 @@
   },
   "homepage": "https://github.com/ascoders/pri-docs#readme",
   "dependencies": {
-    "docsearch.js": "^2.5.2",
+    "docsearch.js": "^2.6.2",
     "react-custom-scrollbars": "^4.2.1",
-    "pri": "^1.0.0"
+    "pri": "^2.0.7"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^2.0.1"
   },
   "pri": {
-    "type": "project"
+    "type": "project",
+    "version": "2.0.7"
   }
 }

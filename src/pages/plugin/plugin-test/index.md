@@ -33,10 +33,10 @@ test("Multiple files", t => {
 
 And we can safely use this `judgeHasComponents` function:
 
-**`./src/index.tsx`**
+**`./src/plugin/index.ts`**
 
 ```typescript
-instance.project.onAnalyseProject(files => {
+pri.project.onAnalyseProject(files => {
   return {
     customPlugin: {
       hasComponents: judgeHasComponents(projectRootPath, files)
@@ -54,9 +54,9 @@ npm test
 ```bash
   3 passed
 ------------|----------|----------|----------|----------|-------------------|
-File        |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
-------------|----------|----------|----------|----------|-------------------|
-All files   |      100 |      100 |      100 |      100 |                   |
- methods.ts |      100 |      100 |      100 |      100 |                   |
-------------|----------|----------|----------|----------|-------------------|
+| File         | % Stmts    | % Branch   | % Funcs    | % Lines    | Uncovered Line #s   |
+| ------------ | ---------- | ---------- | ---------- | ---------- | ------------------- |
+| All files    | 100        | 100        | 100        | 100        |                     |
+| methods.ts   | 100        | 100        | 100        | 100        |                     |
+| ------------ | ---------- | ---------- | ---------- | ---------- | ------------------- |
 ```

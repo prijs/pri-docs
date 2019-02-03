@@ -10,6 +10,15 @@ We provide `pri-plugin-rematch` to use it more easy!
 npm i pri-plugin-rematch
 ```
 
+```
+.
+├── src
+│    └── models
+│          ├── application.ts      # model file
+│          └── user.ts             # model file
+└── priconfig.json
+```
+
 Let’s try it! For example, create a model named `user`:
 
 **src/models/user.ts**

@@ -6,20 +6,18 @@ Use `.commands` to extend the commander.
 
 Register new command by using `registerCommand` method.
 
-**`./src/index.tsx`**
+**`./src/plugin/index.ts`**
 
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  // Add new commander: pri deploy
-  instance.commands.registerCommand({
-    name: 'deploy',
-    description: 'desc',
-    options:[['-d', '--debug', 'deploy debug']]
-    action: async () => {}
-  });
-};
+// Add new commander: pri deploy
+pri.commands.registerCommand({
+  name: 'deploy',
+  description: 'desc',
+  options:[['-d', '--debug', 'deploy debug']]
+  action: async () => {}
+});
 ```
 
 Then you can use `pri deploy`.
@@ -35,19 +33,17 @@ Then you can use `pri deploy`.
 
 Expand commander which already exist.
 
-**`./src/index.tsx`**
+**`./src/plugin/index.ts`**
 
 ```typescript
 import { pri } from "pri"
 
-export default (instance: typeof pri) => {
-  // Run extra code between pri init
-  instance.commands.expandCommand({
-    name: "init",
-    beforeAction: async (...args: any[]) => {}
-    afterAction: async (...args: any[]) => {}
-  })
-}
+// Run extra code between pri init
+pri.commands.expandCommand({
+  name: "init",
+  beforeAction: async (...args: any[]) => {}
+  afterAction: async (...args: any[]) => {}
+})
 ```
 
 | Option       | Description                       |

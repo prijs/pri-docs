@@ -2,26 +2,18 @@
 
 > You can also create config files by [project dashboard](../features/project-dashboard) easily!
 
-You can create `pri.config.ts` in the root of your project directory.
-
-```typescript
-import { ProjectConfig } from 'pri/client';
-
-export default {
-  distDir: 'output'
-} as ProjectConfig;
+```
+.
+├── src
+└── priconfig.json      # Config file.
 ```
 
-Or use a function:
+You can create `priconfig.json` in the root of your project directory.
 
-```typescript
-import { ProjectConfig } from 'pri/client';
-
-export default isDevelopment => {
-  return {
-    distDir: 'output'
-  } as ProjectConfig;
-};
+```json
+{
+  "distDir": "output"
+}
 ```
 
 ## Config options &lt;type&gt; &lt;defaultValue&gt;
@@ -95,13 +87,13 @@ Only take effect on `npm run build` | `pri build`
 
 Custom env. For example:
 
-```typescript
-// pri.config.ts
-export default {
-  customEnv: {
-    user: 'ascoders'
+```json
+// priconfig.json
+{
+  "customEnv": {
+    "user": "ascoders"
   }
-} as ProjectConfig;
+}
 ```
 
 Then you can use it in pages:
@@ -136,20 +128,20 @@ Custom routes. When this configuration exists, it will not parse the `pages` dir
 
 For example:
 
-```typescript
-// pri.config.ts
-export default {
-  routes: [
+```json
+// priconfig.json
+{
+  "routes": [
     {
-      path: '/',
-      component: 'src/pages/home' // direct to ./src/pages/home.tsx or ./src/pages/home/index.tsx
+      "path": "/",
+      "component": "src/pages/home" // direct to ./src/pages/home.tsx or ./src/pages/home/index.tsx
     },
     {
-      path: '/user/:id',
-      component: 'src/page/user-info' // direct to ./src/pages/user-info.tsx or ./src/pages/user-info/index.tsx
+      "path": "/user/:id",
+      "component": "src/page/user-info" // direct to ./src/pages/user-info.tsx or ./src/pages/user-info/index.tsx
     }
   ]
-} as ProjectConfig;
+}
 ```
 
 ### useHashRouter `boolean` `false`

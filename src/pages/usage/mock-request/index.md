@@ -1,5 +1,14 @@
 # Mock request
 
+```
+.
+├── src
+├── mocks             # Mock files here
+│   ├── request.ts
+│   └── other.ts
+└── priconfig.json
+```
+
 `pri` use service worker to mock requests. First, create files in `./mocks/*.ts`, for example:
 
 **`./mocks/user.ts`**

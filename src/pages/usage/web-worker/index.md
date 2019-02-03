@@ -1,5 +1,14 @@
 # Web Worker
 
+```
+.
+├── src                           # Any .worker.tsx? file in this folder will be a web worker
+│   └── components
+│         ├── ast.worker.ts       # Web worker file
+│         └── parser.worker.ts    # Web worker file
+└── priconfig.json
+```
+
 Import a file ending with `.worker.tsx?`, and you can get a `Blob URL` web worker!
 
 ```tsx

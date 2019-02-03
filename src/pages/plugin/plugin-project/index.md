@@ -9,21 +9,17 @@ Get project root path.
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  const projectRootPath = instance.projectRootPath;
-};
+const projectRootPath = pri.projectRootPath;
 ```
 
 ## projectConfig
 
-Get project config in `pri.config.ts`.
+Get project config in `priconfig.json`.
 
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  const projectConfig = instance.projectConfig;
-};
+const projectConfig = pri.projectConfig;
 ```
 
 ## isDevelopment
@@ -33,16 +29,14 @@ Judge whether it is a production environment.
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  const isDevelopment = instance.isDevelopment;
-};
+const isDevelopment = pri.isDevelopment;
 ```
 
 ## onAnalyseProject
 
 Every time `pri` scan project files.
 
-**`./src/index.tsx`**
+**`./src/plugin/index.ts`**
 
 ```typescript
 import { pri } from 'pri';
@@ -53,18 +47,16 @@ interface IAnalyseInfo {
   };
 }
 
-export default (instance: typeof pri) => {
-  instance.project.onAnalyseProject((files, setPipe) => {
-    return {
-      myCustomPlugin: {
-        hasComponents: files.some(file => {
-          const relativePath = path.relative(instance.projectRootPath, path.join(file.dir, file.name));
-          return relativePath.startsWith('src/components');
-        })
-      }
-    } as IAnalyseInfo;
-  });
-};
+pri.project.onAnalyseProject((files, setPipe) => {
+  return {
+    myCustomPlugin: {
+      hasComponents: files.some(file => {
+        const relativePath = path.relative(pri.projectRootPath, path.join(file.dir, file.name));
+        return relativePath.startsWith('src/components');
+      })
+    }
+  } as IAnalyseInfo;
+});
 ```
 
 | Option  | Description          |
@@ -80,29 +72,27 @@ The return value from `onAnalyseProject` callback will merge into project analys
 
 Every time `pri` create entry file. You can get analyse info from first params in first callback function.
 
-**`./src/index.tsx`**
+**`./src/plugin/index.ts`**
 
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
-    // Get analyseInfo from above.
-    const hasComponents = analyseInfo.myCustomPlugin.hasComponents;
+pri.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
+  // Get analyseInfo from above.
+  const hasComponents = analyseInfo.myCustomPlugin.hasComponents;
 
-    const componentsRelativePath = path.relative('.temp', 'src/components');
+  const componentsRelativePath = path.relative('.temp', 'src/components');
 
-    if (hasComponents) {
-      // Expand importer code before header.
-      entry.pipeHeader(header => {
-        return `
-          \$\{header\}
-          import components from "\$\{componentsRelativePath\}"
-        `;
-      });
-    }
-  });
-};
+  if (hasComponents) {
+    // Expand importer code before header.
+    entry.pipeHeader(header => {
+      return `
+        \$\{header\}
+        import components from "\$\{componentsRelativePath\}"
+      `;
+    });
+  }
+});
 ```
 
 ### Entry
@@ -174,7 +164,7 @@ ReactDOM.render(<Root />, document.getElementById('root'));
 You can also get or set custom code position in plugins. Using `entry.pipe`:
 
 ```typescript
-instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
+pri.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
   entry.pipeBody(body => {
     return `
     \$\{body\}
@@ -189,7 +179,7 @@ instance.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
 And in other plugins, you can pipe custom position by using `setPipe` inside `onAnalyseProject`:
 
 ```typescript
-instance.project.onAnalyseProject((files, setPipe) => {
+pri.project.onAnalyseProject((files, setPipe) => {
   setPipe('my-custom-position', text => {
     return `
     \$\{text\}
@@ -211,11 +201,9 @@ instance.project.onAnalyseProject((files, setPipe) => {
 Pri uses a white list for project file management. You can use `whiteFileRules.add` to add project white file list.
 
 ```typescript
-export default (instance: typeof pri) => {
-  instance.project.whiteFileRules.add(file => {
-    const relativePath = path.relative(instance.projectRootPath, file.dir)
-    return relativePath === "src/pages" && file.name === "404" && file.ext === ".tsx"
-  })
+pri.project.whiteFileRules.add(file => {
+  const relativePath = path.relative(pri.projectRootPath, file.dir)
+  return relativePath === "src/pages" && file.name === "404" && file.ext === ".tsx"
 })
 ```
 
@@ -230,9 +218,7 @@ You can run lint anywhere by execute `project.lint()`:
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.project.lint();
-};
+pri.project.lint();
 ```
 
 ## lintFilter
@@ -242,9 +228,7 @@ Ignore some file from lint.
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.project.lintFilter(filePath => !filePath.startsWith('/Home'));
-};
+pri.project.lintFilter(filePath => !filePath.startsWith('/Home'));
 ```
 
 ## checkProjectFiles
@@ -256,9 +240,7 @@ Check project white file list.
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  await instance.project.checkProjectFiles();
-};
+await pri.project.checkProjectFiles();
 ```
 
 ## ensureProjectFiles
@@ -270,9 +252,7 @@ This method will called when excute `pri init`, `pri`, `pri build`.
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  await instance.project.ensureProjectFiles();
-};
+await pri.project.ensureProjectFiles();
 ```
 
 ## addProjectFiles
@@ -282,13 +262,11 @@ Hook when running `addProjectFiles`, you can add your custom files here:
 ```typescript
 import { pri } from 'pri';
 
-export default (instance: typeof pri) => {
-  instance.project.addProjectFiles({
-    fileName: 'abc.json',
-    pipeContent: prevContent =>
-      JSON.stringify({
-        bin: 'npm start'
-      })
-  });
-};
+pri.project.addProjectFiles({
+  fileName: 'abc.json',
+  pipeContent: prevContent =>
+    JSON.stringify({
+      bin: 'npm start'
+    })
+});
 ```

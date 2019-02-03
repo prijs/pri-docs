@@ -10,17 +10,15 @@ For example, `http://example.com` serve following html:
 
 We should use **`publicPath`** + **`outFileName`** to fit this path.
 
-So, you can set **`./pri.config.ts`** to:
+So, you can set **`./priconfig.json`** to:
 
-```typescript
-import { ProjectConfig } from 'pri/client';
-
-export default {
-  useHttps: false,
-  devPort: 7777,
-  publicPath: 'http://localhost:7777/static',
-  outFileName: 'bundle.js'
-} as ProjectConfig;
+```json
+{
+  "useHttps": false,
+  "devPort": 7777,
+  "publicPath": "http://localhost:7777/static",
+  "outFileName": "bundle.js"
+}
 ```
 
 Then, run `npm start`.

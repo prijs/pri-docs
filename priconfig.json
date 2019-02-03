@@ -1,0 +1,6 @@
+{
+  "title": "Pri",
+  "publicPath": "/pri-docs",
+  "baseHref": "/pri-docs",
+  "useServiceWorker": true
+}
