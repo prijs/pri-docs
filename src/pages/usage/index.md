@@ -22,7 +22,6 @@ npx pri init
 ❯ Project
   Component
   Pri Plugin
-  Cli
 ```
 
 > No `npx`? Run `./node_modules/.bin/pri init`.
