@@ -17,6 +17,10 @@ pri.build.pipeConfig(config => {
 });
 ```
 
+## pipeBundleConfig
+
+Change webpack config when run `npm run bundle`. The same usage as `pipeConfig`.
+
 ## Other configuration modification
 
 Some times, we want to modified some loader's options instead of the hold config, so we provide some other methods to do this.
