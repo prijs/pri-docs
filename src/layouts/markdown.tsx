@@ -232,6 +232,10 @@ const data: {
           title: 'Cli'
         },
         {
+          href: 'plugin-webpack/',
+          title: 'Webpack'
+        },
+        {
           href: 'plugin-web-ui/',
           title: 'WebUI'
         },
