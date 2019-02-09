@@ -27,3 +27,17 @@ pri.webpack.watch({
   entryPath: '/user/workspace/index.ts'
 });
 ```
+
+## devServer
+
+Watch files and provide access to it by http.
+
+```typescript
+import { pri } from 'pri';
+
+pri.webpack.devServer({
+  mode: 'production',
+  devPort: 1234,
+  entryPath: '/user/workspace/index.ts'
+});
+```

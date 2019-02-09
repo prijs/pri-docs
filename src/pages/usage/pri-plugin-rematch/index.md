@@ -91,4 +91,4 @@ export default class Page extends React.PureComponent<Props, State> {
 
 > Import connect from 'pri/models' is a better way, 'pri/models' provides a strong typed `connect` function:
 
-<img src="https://user-images.githubusercontent.com/7970947/39965212-62615908-56c7-11e8-9084-081734eaf280.png" width=400>
+<img src="https://user-images.githubusercontent.com/7970947/39965212-62615908-56c7-11e8-9084-081734eaf280.png" width={400} />

@@ -50,7 +50,7 @@ Don't forget to execute `npm start` in your plugin's dir.
 
 Here is all positions in the webUI:
 
-<img src="https://user-images.githubusercontent.com/7970947/39683416-de6ba0f6-51e7-11e8-9a6e-124f63ba4415.png" width=800 />
+<img src="https://user-images.githubusercontent.com/7970947/39683416-de6ba0f6-51e7-11e8-9a6e-124f63ba4415.png" width={800} />
 
 ### `menu`
 
@@ -112,11 +112,11 @@ applicationAction.pipeTreeNode((treeData: any) => {
 
 In above code, we register a new tree element:
 
-<img src="https://user-images.githubusercontent.com/7970947/39683744-c252c474-51e9-11e8-932c-de87f1aa3bcf.png" width=240 />
+<img src="https://user-images.githubusercontent.com/7970947/39683744-c252c474-51e9-11e8-932c-de87f1aa3bcf.png" width={240} />
 
 And when we click it, `tree-project-analyse` will be loaded on the right area:
 
-<img src="https://user-images.githubusercontent.com/7970947/39683806-1b60d3a8-51ea-11e8-90df-3058941bcdd1.png" width=800 />
+<img src="https://user-images.githubusercontent.com/7970947/39683806-1b60d3a8-51ea-11e8-90df-3058941bcdd1.png" width={800} />
 
 So we can set position to `tree-project-analyse` to hold it:
 

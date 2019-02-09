@@ -12,7 +12,7 @@ import { pri } from 'pri';
 pri.project.onAnalyseProject(() => {
   pri.serviceWorker.pipe(
     text => `
-    \${text}
+    ${text}
     self.addEventListener("fetch", event => {
       // some code here..
     })
@@ -31,7 +31,7 @@ import { pri } from 'pri';
 pri.build.afterProdBuild(stats => {
   pri.serviceWorker.pipeAfterProdBuild(
     text => `
-    \${text}
+    ${text}
     // use stats.assetsByChunkName do something..
   `
   );

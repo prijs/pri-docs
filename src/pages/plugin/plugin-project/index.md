@@ -87,8 +87,8 @@ pri.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
     // Expand importer code before header.
     entry.pipeHeader(header => {
       return `
-        \$\{header\}
-        import components from "\$\{componentsRelativePath\}"
+        ${header}
+        import components from "${componentsRelativePath}"
       `;
     });
   }
@@ -167,9 +167,9 @@ You can also get or set custom code position in plugins. Using `entry.pipe`:
 pri.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
   entry.pipeBody(body => {
     return `
-    \$\{body\}
+    ${body}
     some code after body.
-    \${entry.pipe.get("my-custom-position", "defaultValue")}
+    ${entry.pipe.get("my-custom-position", "defaultValue")}
     some other code.
   `;
   });
@@ -182,7 +182,7 @@ And in other plugins, you can pipe custom position by using `setPipe` inside `on
 pri.project.onAnalyseProject((files, setPipe) => {
   setPipe('my-custom-position', text => {
     return `
-    \$\{text\}
+    ${text}
     some code.
   `;
   });

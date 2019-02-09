@@ -18,18 +18,26 @@ For example, populate `./src/pages/example-page/index.md` inside your project:
 
 Then this page will route to `/example-page`.
 
-## Layout
+## Mdx
 
 ```
 .
 ├── src
-│   └── layouts
-│         └── markdown.tsx         # Layout for markdown
+│   └── pages
+│         ├── index.mdx         # Markdom page, route to `/`
+│         └── hello
+│               └── index.mdx   # Markdom page, route to `/hello`
 └── priconfig.json
 ```
 
-Create `./src/layouts/markdown.tsx`, then all markdown pages will use this layout template. For example:
+You can set `.mdx` instead of `.md`, and you can write `jsx` in your markdown source code!
 
-```tsx
-export default () => <div style={{ padding: 10 }}>{this.props.children}</div>;
+```mdx
+import { Chart } from '../components/chart';
+
+# Here’s a chart
+
+The chart is rendered inside our MDX document.
+
+<Chart />
 ```
