@@ -10,12 +10,14 @@
   margin: 0 auto;
   width: 500px;
   margin-top: 100px;
+  padding-bottom: 10px;
 }
 
 .home-logo {
   color: #333;
   font-size: 50px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .home-logo-desc {
@@ -23,21 +25,89 @@
 }
 
 .home-logo-button {
-  font-size: 16px;
+  display: block;
+  background-color: #40a9ff;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+  text-decoration: none;
   margin-top: 20px;
-  border: 1px solid #1890ff;
-  background-color: #1890ff;
-  color: white;
-  border-radius: 3px;
-  padding: 10px;
-  transition: all 0.3s;
+}
+
+.home-logo-button:before,
+.home-logo-button:after {
+  border: 0 solid transparent;
+  transition: all 0.25s;
+  content: '';
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+
+.home-logo-button:before {
+  border-top: 2px solid #40a9ff;
+  left: 0px;
+  top: -5px;
+}
+
+.home-logo-button:after {
+  border-bottom: 2px solid #40a9ff;
+  bottom: -5px;
+  right: 0px;
 }
 
 .home-logo-button:hover {
   background-color: #40a9ff;
-  border: 1px solid #40a9ff;
 }
 
-a.home-logo-button {
-  text-decoration: none;
+.home-logo-button:hover:before,
+.home-logo-button:hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+.animation-color {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
