@@ -2,7 +2,7 @@
 
 Two steps:
 
-1. Run npx `pri-migrate-one-to-two` in your project root path.
+1. Run `npx pri-migrate-one-to-two` in your project root path.
 2. Reinstall node_modules.
 
 ## Upgrates
