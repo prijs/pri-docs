@@ -164,6 +164,15 @@ export const menuData = {
           title: 'pri-plugin-rematch'
         }
       ]
+    },
+    {
+      title: 'Migrate',
+      childs: [
+        {
+          href: 'migrate-1-to-2/',
+          title: 'Migrate from 1.x to 2.x'
+        }
+      ]
     }
   ],
   plugin: [
