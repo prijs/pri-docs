@@ -167,7 +167,3 @@ Hide source code when publish npm package. Only take effect on `projectType = co
 ### watchNodeModules `boolean` `false`
 
 Wether watch `node_modules`. If set to `true`, will slightly affect performance.
-
-### enableCssModules `boolean` `false`
-
-A [CSS Module](https://github.com/css-modules/css-modules) is a CSS file in which all class names and animation names are scoped locally by default.

@@ -70,11 +70,11 @@ export default () => <button className="button" />;
 
 ## Css Modules Usage
 
-If set `enableCssModules: true`, will enable [CSS Modules](https://github.com/css-modules/css-modules).
+If set `xx.scss` to `xx.module.scss`, will enable [CSS Modules](https://github.com/css-modules/css-modules).
 
-For example, we have 3 files named `src/index.tsx`、`src/input.css`、`src/button.scss`, the two style files:
+For example, we have 3 files named `src/index.tsx`、`src/input.module.css`、`src/button.module.scss`, the two style files:
 
-**src/input.css:**
+**src/input.module.css:**
 
 ```css
 input {
@@ -83,7 +83,7 @@ input {
 }
 ```
 
-**src/button.scss:**
+**src/button.module.scss:**
 
 ```scss
 button {
@@ -98,8 +98,8 @@ Here we use it in **src/index.tsx:**
 
 ```tsx
 import * as React from 'react';
-import inputStyles from './input.css';
-import buttonStyles from './button.scss';
+import inputStyles from './input.module.css';
+import buttonStyles from './button.module.scss';
 
 export default () => (
   <div>
@@ -134,7 +134,7 @@ Will compile to:
 **Any ts file:**
 
 ```tsx
-import styles from './some-path/style.scss'
+import styles from './some-path/style.module.scss'
 
 export () => <div className={styles.container} />
 ```
@@ -142,7 +142,7 @@ export () => <div className={styles.container} />
 Will compile to:
 
 ```tsx
-import styles from './some-path/style.scss'
+import styles from './some-path/style.module.scss'
 
 export () => <div className="some-path-style-container-22VSk" />
 ```
@@ -169,8 +169,8 @@ Here is your component `my-component` code example:
 
 ```tsx
 import * as React from 'react';
-import inputStyles from './input.css';
-import buttonStyles from './button.scss';
+import inputStyles from './input.module.css';
+import buttonStyles from './button.module.scss';
 
 export default () => (
   <div>
