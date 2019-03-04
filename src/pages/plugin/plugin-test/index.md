@@ -7,12 +7,12 @@ It's recommended to write plug-ins in units of function. For example judege whet
 ```typescript
 export function judgeHasComponents(projectRootPath: string, files: path.ParsedPath[]) {
   return files.some(file => {
-    const relativePath = path.relative(projectRootPath, path.join(file.dir, file.name))
-    if (relativePath.startsWith("src/components")) {
-      return true
+    const relativePath = path.relative(projectRootPath, path.join(file.dir, file.name));
+    if (relativePath.startsWith('src/components')) {
+      return true;
     }
-    return false
-  })
+    return false;
+  });
 }
 ```
 
@@ -21,14 +21,14 @@ So we can test it completely:
 **`tests/index.ts`**
 
 ```typescript
-test("Multiple files", t => {
+test('Multiple files', t => {
   const relativeProjectFiles = [
-    "src/components/index.tsx",
-    "src/components/button/index.tsx",
-    "src/components/select/index.tsx"
-  ]
-  t.true(judgeHasComponents(testProjectRootPath, testFilePaths(relativeProjectFiles)))
-})
+    'src/components/index.tsx',
+    'src/components/button/index.tsx',
+    'src/components/select/index.tsx'
+  ];
+  t.true(judgeHasComponents(testProjectRootPath, testFilePaths(relativeProjectFiles)));
+});
 ```
 
 And we can safely use this `judgeHasComponents` function:
@@ -41,8 +41,8 @@ pri.project.onAnalyseProject(files => {
     customPlugin: {
       hasComponents: judgeHasComponents(projectRootPath, files)
     }
-  }
-})
+  };
+});
 ```
 
 ## Run test

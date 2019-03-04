@@ -169,7 +169,7 @@ pri.project.onCreateEntry((analyseInfo: IAnalyseInfo, entry) => {
     return `
     ${body}
     some code after body.
-    ${entry.pipe.get("my-custom-position", "defaultValue")}
+    ${entry.pipe.get('my-custom-position', 'defaultValue')}
     some other code.
   `;
   });
@@ -202,9 +202,9 @@ Pri uses a white list for project file management. You can use `whiteFileRules.a
 
 ```typescript
 pri.project.whiteFileRules.add(file => {
-  const relativePath = path.relative(pri.projectRootPath, file.dir)
-  return relativePath === "src/pages" && file.name === "404" && file.ext === ".tsx"
-})
+  const relativePath = path.relative(pri.projectRootPath, file.dir);
+  return relativePath === 'src/pages' && file.name === '404' && file.ext === '.tsx';
+});
 ```
 
 It mean that file or dir is validate, when return `true`.

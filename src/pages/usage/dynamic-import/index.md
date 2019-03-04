@@ -6,8 +6,8 @@ Use `import()` to load packages!
 
 ```typescript
 async function mergeObject(source: object, target: object) {
-  const _ = await import("lodash")
-  return _.mergeDeep(source, target)
+  const _ = await import('lodash');
+  return _.mergeDeep(source, target);
 }
 ```
 
@@ -16,15 +16,15 @@ async function mergeObject(source: object, target: object) {
 Use `react-loadable` to load component dynamically.
 
 ```typescript
-import Loadable from "react-loadable"
+import Loadable from 'react-loadable';
 
 const SomePage = Loadable({
-  loader: () => import("../components/some-page"),
+  loader: () => import('../components/some-page'),
   loading: () => <div>loading..</div>
-})
+});
 
 function renderDynamicPage() {
-  return <SomePage />
+  return <SomePage />;
 }
 ```
 

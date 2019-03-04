@@ -6,12 +6,12 @@ We will automatically generate the following routing in `.temp` folder:
 
 ```typescript
 const srcPagesIndex = Loadable({
-  loader: () => import("..."),
+  loader: () => import('...'),
   loading: () => null
-})
+});
 
 const srcPagesOther = Loadable({
-  loader: () => import("..."),
+  loader: () => import('...'),
   loading: () => null
-})
+});
 ```

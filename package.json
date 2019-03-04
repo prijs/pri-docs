@@ -27,7 +27,7 @@
   "dependencies": {
     "docsearch.js": "^2.6.2",
     "react-custom-scrollbars": "^4.2.1",
-    "pri": "^2.0.28"
+    "pri": "^2.0.59-beta2"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"
@@ -35,5 +35,11 @@
   "pri": {
     "type": "project",
     "version": "2.0.29"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   }
 }
