@@ -9,14 +9,9 @@ For example, `pri-plugin-login` get user info, and `pri-plugin-track` want to ge
 **`pri-plugin-login/src/plugin/index.ts`**
 
 ```typescript
-import { pri } from "pri"
+import { pri } from 'pri';
 
-const currentUser = getCurrentUser() // You can also cache user information in some files.
-
-pri.context.pipe(context => {
-  ...context,
-  currentUser
-})
+pri.context.currentUser = getCurrentUser(); // You can also cache user information in some files.
 ```
 
 ## get
@@ -26,7 +21,7 @@ pri.context.pipe(context => {
 ```typescript
 import { pri } from 'pri';
 
-pri.context.get().currentUser;
+pri.context.currentUser;
 ```
 
 Don't forget to set dependence in `pri-plugin-track/src/index.ts`:
