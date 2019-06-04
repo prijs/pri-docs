@@ -58,20 +58,16 @@ pri.build.pipeStyleLoaderOptions(options => {
 
 `.build.pipeBabelLoaderOptions` allow you to modify the options of `babel-loader`.
 
-### pipeTsLoaderOptions
+### pipeSassInclude
 
-`.build.pipeTsLoaderOptions` allow you to modify the options of `ts-loader`.
-
-### pipeTsInclude
-
-`.build.pipeTsInclude` allow you to modify the `include` setting for ts files.
+`.build.pipeSassInclude` allow you to modify the `include` setting for scss files.
 
 For example:
 
 ```typescript
 import { pri } from 'pri';
 
-pri.build.pipeTsInclude(includePaths => {
+pri.build.pipeSassInclude(includePaths => {
   return [
     ...includePaths
     'some/path/'
@@ -79,17 +75,9 @@ pri.build.pipeTsInclude(includePaths => {
 });
 ```
 
-### pipeSassInclude
-
-`.build.pipeSassInclude` allow you to modify the `include` setting for scss files.
-
 ### pipeLessInclude
 
 `.build.pipeLessInclude` allow you to modify the `include` setting for essfiles.
-
-### pipeTsExclude
-
-`.build.pipeTsExclude` allow you to modify the `exclude` setting for ts files.
 
 ### pipeSassExclude
 

@@ -70,6 +70,10 @@ export const menuData = {
           title: 'Mock request'
         },
         {
+          href: 'monorepo/',
+          title: 'Monorepo'
+        },
+        {
           href: '404-page/',
           title: '404 Page'
         },
@@ -156,12 +160,16 @@ export const menuData = {
       title: 'Plugins',
       childs: [
         {
-          href: 'pri-plugin-dob/',
-          title: 'pri-plugin-dob'
+          href: 'pri-plugin-redux/',
+          title: 'pri-plugin-redux'
         },
         {
           href: 'pri-plugin-rematch/',
           title: 'pri-plugin-rematch'
+        },
+        {
+          href: 'pri-plugin-dob/',
+          title: 'pri-plugin-dob'
         }
       ]
     },

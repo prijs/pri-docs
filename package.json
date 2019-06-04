@@ -2,7 +2,7 @@
   "name": "pri-docs",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "pri test",
     "start": "pri dev",
@@ -11,7 +11,7 @@
     "deploy": "pri build && gh-pages -d dist",
     "analyse": "pri analyse",
     "docs": "pri docs",
-    "format": "tslint --fix './src/**/*.?(ts|tsx)' && prettier --write './src/**/*.?(ts|tsx)'",
+    "format": "eslint './?(src|packages|docs|tests)/**/*.?(ts|tsx)'",
     "bundle": "pri bundle"
   },
   "repository": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "docsearch.js": "^2.6.2",
     "react-custom-scrollbars": "^4.2.1",
-    "pri": "^2.0.59-beta2"
+    "pri": "^3.0.8"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"
@@ -39,7 +39,7 @@
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "npm test -- --package root"
     }
   }
 }

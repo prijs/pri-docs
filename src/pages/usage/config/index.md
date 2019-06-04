@@ -167,3 +167,9 @@ Hide source code when publish npm package. Only take effect on `projectType = co
 ### watchNodeModules `boolean` `false`
 
 Wether watch `node_modules`. If set to `true`, will slightly affect performance.
+
+### allowDepsSemver `string` `null`
+
+Check deps semver, allow input: `major` | `minor` | `patch` | `fixed`.
+
+For example, you set `"allowDepsSemver": "patch"`, this deps is illegal: `"lodash": "^1.0.0"`.

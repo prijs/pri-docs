@@ -4,6 +4,11 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import Nav from '../components/nav';
+import 'docsearch.js/dist/cdn/docsearch.min.css';
+
+import 'highlight.js/styles/github.css';
+import './index.css';
+import { menuData } from './menu';
 
 // tslint:disable-next-line:no-var-requires
 const javascript = require('highlight.js/lib/languages/javascript');
@@ -13,11 +18,6 @@ const Scroll = require('react-custom-scrollbars').default;
 
 // tslint:disable-next-line:no-var-requires
 const docSearch = require('docsearch.js');
-import 'docsearch.js/dist/cdn/docsearch.min.css';
-
-import 'highlight.js/styles/github.css';
-import './index.css';
-import { menuData } from './menu';
 
 highlight.registerLanguage('typescript', javascript);
 highlight.registerLanguage('tsx', javascript);
@@ -48,7 +48,7 @@ function withEndSlash(str: string) {
     return str;
   }
   if (!str.endsWith('/')) {
-    return str + '/';
+    return `${str}/`;
   }
   return str;
 }
@@ -56,9 +56,11 @@ function withEndSlash(str: string) {
 @(withRouter as any)
 export default class Page extends React.PureComponent<Props & Partial<RouteComponentProps<any>>, State> {
   public static defaultProps = new Props();
+
   public state = new State();
 
   private leftDom: HTMLElement = null;
+
   private rightDom: HTMLElement = null;
 
   public componentDidMount() {
@@ -76,11 +78,12 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
       return;
     }
 
+    // eslint-disable-next-line react/no-find-dom-node
     const selfDom = ReactDOM.findDOMNode(this) as HTMLElement;
     this.leftDom = selfDom.querySelector('.left');
     this.rightDom = selfDom.querySelector('.right');
 
-    document.onscroll = event => {
+    document.onscroll = () => {
       if (window.scrollY > 50 && this.rightDom.offsetHeight > this.leftDom.offsetHeight) {
         this.setState({ absoluteLeftContainer: true });
       } else {
@@ -108,7 +111,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
   }
 
   public freshHeadLink() {
-    const hashName = location.hash.substr(1);
+    const hashName = window.location.hash.substr(1);
 
     setTimeout(() => {
       document.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(block => {
@@ -117,10 +120,9 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
 
           const safeContent = encodeURIComponent(block.innerHTML);
 
-          block.innerHTML =
-            `
+          block.innerHTML = `
           <a name="${safeContent}" class="anchor" aria-hidden="true" href="#${safeContent}"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>
-        ` + block.innerHTML;
+        ${block.innerHTML}`;
 
           if (safeContent === hashName) {
             setTimeout(() => {
@@ -156,6 +158,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
             }/index.md`}
             className="edit-on-github"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Edit this page on github.
           </a>
@@ -169,7 +172,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
     const currentData = data[category];
 
     return currentData.map((group, index) => {
-      const realHref = '/' + category + '/' + group.href;
+      const realHref = `/${category}/${group.href}`;
       return (
         <div key={index} className="menu-group-container">
           {group.href ? (
@@ -196,7 +199,7 @@ export default class Page extends React.PureComponent<Props & Partial<RouteCompo
     const category = this.props.location.pathname.split('/')[1];
 
     return menuItems.map((menuItem, index) => {
-      const realHref = '/' + category + '/' + menuItem.href;
+      const realHref = `/${category}/${menuItem.href}`;
       return (
         <Link
           key={index}

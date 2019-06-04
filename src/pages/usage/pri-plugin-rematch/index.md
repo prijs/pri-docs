@@ -24,6 +24,8 @@ Let’s try it! For example, create a model named `user`:
 **src/models/user.ts**
 
 ```typescript
+import { model } from 'pri/model';
+
 export default model({
   state: {
     name: 'jeck',
@@ -46,25 +48,6 @@ export default model({
     }
   }
 });
-```
-
-> To enhance typescript support for model, we provide a model function here:
-
-```typescript
-const model = <
-  State,
-  Reducers extends {
-    [key: string]: (state?: State, payload?: any) => State;
-  }
->(obj: {
-  state: State;
-  reducers: Reducers;
-  effects: {
-    [key: string]: (this: any, ...args: any[]) => void;
-  };
-}) => {
-  return obj;
-};
 ```
 
 Then, use it in pages!

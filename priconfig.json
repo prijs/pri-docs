@@ -2,5 +2,6 @@
   "title": "Pri",
   "publicPath": "/pri-docs",
   "baseHref": "/pri-docs",
-  "useServiceWorker": false
+  "useServiceWorker": false,
+  "type": "project"
 }

@@ -12,3 +12,5 @@
 /packages
 /declaration
 //tests
+/yarn.lock
+/.node
