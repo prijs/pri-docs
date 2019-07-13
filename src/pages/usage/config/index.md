@@ -160,10 +160,6 @@ Suggestion to open!
 
 Enable package lock. If you don't want to auto upgrade packages by semver agreement, set `packageLock` to `true`.
 
-### hideSourceCodeForNpm `boolean` `false`
-
-Hide source code when publish npm package. Only take effect on `projectType = component`.
-
 ### watchNodeModules `boolean` `false`
 
 Wether watch `node_modules`. If set to `true`, will slightly affect performance.
